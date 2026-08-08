@@ -24,12 +24,20 @@ router.post('/', auth, async (req, res) => {
     await order.save();
     // Send confirmation email (won't block order creation if it fails)
     sendOrderConfirmationEmail(order);
-    // Reduce stock for each item
+    // Reduce stock for each item (color + size aware)
     for (const item of items) {
       if (item.id) {
         const product = await Product.findById(item.id);
         if (product) {
-          if (item.size) {
+          if (item.color && product.colors && product.colors.length > 0) {
+            const colorObj = product.colors.find(c => c.name === item.color);
+            if (colorObj) {
+              const sizeObj = colorObj.sizes.find(s => s.size === item.size);
+              if (sizeObj) {
+                sizeObj.stock = Math.max(0, sizeObj.stock - item.qty);
+              }
+            }
+          } else if (item.size) {
             const sizeObj = product.sizes.find(s => s.size === item.size);
             if (sizeObj) {
               sizeObj.stock = Math.max(0, sizeObj.stock - item.qty);

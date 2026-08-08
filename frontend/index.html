@@ -310,12 +310,50 @@ input, textarea, select { font-family: inherit; }
   background: var(--navy);
   overflow: hidden;
 }
-.hero-bg {
+/* .hero-bg {
   position: absolute;
   inset: 0;
   background: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&q=80') center/cover no-repeat;
   opacity: 0.2;
   filter: saturate(0.6);
+} */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero-slide.active {
+  opacity: 0.35;
+}
+.hero-dots {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.hero-dot.active {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 4px;
 }
 .hero-overlay {
   position: absolute;
@@ -449,6 +487,37 @@ input, textarea, select { font-family: inherit; }
   100% { transform: translateX(-50%); }
 }
 
+
+
+.color-selector{
+    margin:25px 0;
+}
+
+.color-options{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.color-btn{
+    padding:10px 18px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    background:white;
+    cursor:pointer;
+}
+
+.color-btn:hover{
+    background:#c9a84c;
+    color:white;
+}
+.color-btn.selected{
+    background:#c9a84c;
+    color:white;
+    border-color:#c9a84c;
+}
+
+
 /* === FEATURED PRODUCTS === */
 .featured {
   background: var(--off-white);
@@ -498,6 +567,22 @@ input, textarea, select { font-family: inherit; }
   border-radius: 50px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+.sold-out-banner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background: rgba(10,22,40,0.82);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  z-index: 2;
 }
 .product-info {
   padding: 22px;
@@ -813,30 +898,58 @@ input, textarea, select { font-family: inherit; }
   border-color: var(--navy);
 }
 
-/* === GALLERY === */
+ /* === GALLERY === */
 .gallery-page { padding: 60px 0 100px; background: var(--off-white); }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
-.gallery-item {
+/* .gallery-item {
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
   cursor: pointer;
   aspect-ratio: 1;
+} */
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  cursor: pointer;
+
+  /* Keep the square cells */
+  aspect-ratio: 1 / 1;
 }
+
 .gallery-item:nth-child(1), .gallery-item:nth-child(6) {
   grid-column: span 2;
   grid-row: span 2;
 }
+/* .gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+} */
+
+
 .gallery-item img {
   width: 100%;
   height: 100%;
+  display: block;
+
+  /* Fill the container */
   object-fit: cover;
-  transition: transform 0.6s ease;
+
+  /* Center the crop */
+  object-position: center;
+
+  transition: transform .4s ease;
 }
+
 .gallery-item:hover img { transform: scale(1.1); }
 .gallery-item::after {
   content: '';
@@ -847,6 +960,10 @@ input, textarea, select { font-family: inherit; }
   transition: var(--transition);
 }
 .gallery-item:hover::after { opacity: 1; }
+
+.gallery-item:first-child img {
+    object-position: center 30%;
+} 
 
 /* === ABOUT === */
 .about-page { padding: 60px 0 100px; background: var(--off-white); }
@@ -1560,7 +1677,16 @@ input, textarea, select { font-family: inherit; }
   .hero-stats { gap: 32px; flex-wrap: wrap; }
   .why-grid { grid-template-columns: 1fr; }
   .test-grid { grid-template-columns: 1fr; }
-  .products-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .products-grid, .wishlist-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .product-img { height: 160px; }
+  .product-info { padding: 12px; }
+  .product-name { font-size: 1rem; }
+  .product-desc { display: none; }
+  .product-cat { font-size: 0.62rem; letter-spacing: 1px; }
+  .product-price { font-size: 1.1rem; }
+  .product-bottom { flex-direction: column; align-items: stretch; gap: 8px; }
+  .product-actions { justify-content: space-between; }
+  .btn-add-cart { flex: 1; justify-content: center; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 2; grid-row: span 1; }
   .contact-grid { grid-template-columns: 1fr; }
@@ -1577,7 +1703,7 @@ input, textarea, select { font-family: inherit; }
   .hero h1 { font-size: 2.2rem; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .products-grid { grid-template-columns: 1fr; }
+  .products-grid, .wishlist-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item:nth-child(1), .gallery-item:nth-child(6) { grid-column: span 1; }
 }
@@ -2329,13 +2455,21 @@ input, textarea, select { font-family: inherit; }
 <div id="page-home" class="page">
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero-bg"></div>
+    <!-- <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-decor"></div> -->
+
+
+    <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-pattern"></div>
     <div class="hero-decor"></div>
+    <div class="hero-dots" id="heroDots"></div>
+
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge"><i class="fas fa-star"></i> Trusted Since Years in Mumbai</div>
+        <div class="hero-badge"><i class="fas fa-star"></i> Trusted Since Years in Kalyan</div>
         <h1><span class="hero-title-main">MEMON CLOTH STORE</span><br><span class="gold-line">Quality Fabrics at Affordable Prices</span></h1>
         <p>From Dresses to elegant fabrics, Memon Cloth Store brings you the finest clothing materials at prices that make sense. Visit our store in Kalyan, Mumbai.</p>
         <div class="hero-actions">
@@ -2345,7 +2479,7 @@ input, textarea, select { font-family: inherit; }
         <div class="hero-stats">
           <div class="hero-stat"><h3>1000+</h3><p>Happy Customers</p></div>
           <div class="hero-stat"><h3>500+</h3><p>Products</p></div>
-          <div class="hero-stat"><h3>5+</h3><p>Years of Trust</p></div>
+          <div class="hero-stat"><h3>25+</h3><p>Years of Trust</p></div>
         </div>
       </div>
     </div>
@@ -2357,11 +2491,11 @@ input, textarea, select { font-family: inherit; }
       <span><i class="fas fa-fire"></i> New Arrivals — Women's Summer Collection</span>
       <span><i class="fas fa-percent"></i> Bulk Order Discounts Available</span>
       <span><i class="fas fa-truck"></i> Free Home Delivery in Kalyan</span>
-      <span><i class="fas fa-gift"></i> Festival Offers — Up to 30% Off</span>
+      <span><i class="fas fa-gift"></i> Visit our Shop for better experience</span>
       <span><i class="fas fa-fire"></i> New Arrivals — Women's Summer Collection</span>
       <span><i class="fas fa-percent"></i> Bulk Order Discounts Available</span>
       <span><i class="fas fa-truck"></i> Free Home Delivery in Kalyan</span>
-      <span><i class="fas fa-gift"></i> Festival Offers — Up to 30% Off</span>
+      <span><i class="fas fa-gift"></i> Visit our Shop for better experience</span>
     </div>
   </div>
 
@@ -2431,7 +2565,7 @@ input, textarea, select { font-family: inherit; }
           <p class="test-text">"Amazing collection of fabrics! The staff is very helpful and they always suggest the best material for our needs. Highly recommended for anyone in Mumbai."</p>
           <div class="test-author">
             <div class="test-avatar">RK</div>
-            <div class="test-author-info"><h4>Rajesh Kumar</h4><p>Loyal Customer</p></div>
+            <div class="test-author-info"><h4>Anas Kapadia</h4><p>Loyal Customer</p></div>
           </div>
         </div>
         <div class="test-card reveal">
@@ -2439,7 +2573,7 @@ input, textarea, select { font-family: inherit; }
           <p class="test-text">"I ordered kids wear through WhatsApp and the service was excellent. Quick response, great quality, and delivered right to my door. Will order again!"</p>
           <div class="test-author">
             <div class="test-avatar">SP</div>
-            <div class="test-author-info"><h4>Sana Patel</h4><p>Online Customer</p></div>
+            <div class="test-author-info"><h4>Ahmed Kapadia</h4><p>Online Customer</p></div>
           </div>
         </div>
       </div>
@@ -2517,15 +2651,21 @@ input, textarea, select { font-family: inherit; }
     <div class="container">
       <div class="about-grid reveal">
         <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Memon Cloth Store Interior">
-          <div class="about-img-badge">Est. in Mumbai</div>
+          <div class="about-img">
+         <img src="images/shop.jpg"
+             alt="Memon Cloth Store">
+        <div class="about-img-badge">Since 1970</div>
+      </div>  
         </div>
         <div class="about-text">
           <span class="section-label">Our Story</span>
           <h2>Serving Mumbai with Quality & Trust</h2>
-          <p>Memon Cloth Store has been a cornerstone of the Kalyan community for years, providing families with high-quality clothing and fabrics at prices that respect their budgets. Located on Ghass Bazar Road, our store has grown from a small shop to a trusted name in clothing retail.</p>
+          <!-- <p>Memon Cloth Store has been a cornerstone of the Kalyan community for years, providing families with high-quality clothing and fabrics at prices that respect their budgets. Located on Ghass Bazar Road, our store has grown from a small shop to a trusted name in clothing retail.</p>
           <p>Founded with a simple belief — that everyone deserves access to quality fabrics — we have built lasting relationships with our customers through honest dealings, premium products, and a warm, welcoming shopping experience.</p>
-          <p>From Dresses that withstand daily wear to elegant fabrics for special occasions, every product in our store is carefully selected to meet our high standards of quality and value.</p>
+          <p>From Dresses that withstand daily wear to elegant fabrics for special occasions, every product in our store is carefully selected to meet our high standards of quality and value.</p> -->
+        <p>Memon Cloth Store has proudly served the Kalyan community for decades, carrying forward a legacy of trust, quality, and customer satisfaction. While our retail store was established in <strong>1999</strong>, our family's journey in the cloth business began in <strong>1970</strong>, giving us over five decades of experience in the textile and clothing industry.</p>
+        <p>Built on the values of honesty, quality, and affordability, Memon Cloth Store has become a trusted destination for families looking for premium fabrics, ready-made garments, dress materials, and school uniforms. We carefully select every product to ensure our customers receive the best combination of quality, style, and value.</p>
+        <p>Located near Memon Masjid, Kalyan, we continue our tradition of providing a warm and personalized shopping experience. Whether you're shopping for everyday wear, festive occasions, or premium fabrics, our experienced team is committed to helping you find the perfect choice for every need.</p>
         </div>
       </div>
       <div class="mv-grid">
@@ -2589,7 +2729,7 @@ input, textarea, select { font-family: inherit; }
               <div>
                 <h4>Call Us</h4>
                 <p>+91 84528 03023</p>
-                <p style="font-size:0.78rem; color:var(--gray-300);">Mon–Sat: 9:00 AM – 9:00 PM</p>
+                <p style="font-size:0.78rem; color:var(--gray-300);">Mon–Sun: 11:00 AM – 9:00 PM</p>
               </div>
             </div>
             <div class="contact-info-card reveal">
@@ -2602,8 +2742,7 @@ input, textarea, select { font-family: inherit; }
             </div>
           </div>
           <div class="map-container reveal">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.0!2d73.13!3d19.24!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDE0JzI0LjAiTiA3M8KwMDcnNDguMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
-          </div>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3766.9525413607!2d73.121454!3d19.2409!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795d98b84df17%3A0x9c7a66822ac22775!2sMemon%20Cloth%20Store%20%26%20Memon%20NX!5e0!3m2!1sen!2sin!4v1785869512786!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>          </div>
         </div>
         <div class="contact-form reveal">
           <h3>Send Us a Message</h3>
@@ -2715,6 +2854,47 @@ input, textarea, select { font-family: inherit; }
   </div>
 </div>
 
+<!-- SIZE CHART MODAL -->
+<div class="auth-modal" id="sizeChartModal">
+  <div class="auth-box" style="position:relative;max-width:640px;">
+    <button class="auth-close" onclick="closeSizeChart()"><i class="fas fa-times"></i></button>
+    <div class="auth-header">
+      <h2>Size Chart</h2>
+      <p>All measurements are approximate</p>
+    </div>
+    <div class="auth-body">
+      <div style="text-align:center;margin-bottom:16px;">
+        <button class="cat-btn active" id="unitInches" onclick="switchSizeUnit('inches')" style="margin-right:8px;">Inches</button>
+        <button class="cat-btn" id="unitCm" onclick="switchSizeUnit('cm')">CM</button>
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;text-align:center;font-size:0.85rem;">
+          <thead>
+            <tr style="background:var(--off-white);">
+              <th style="padding:10px;border:1px solid var(--gray-200);">Size</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">S</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">M</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">L</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">XL</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">XXL</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">3XL</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">4XL</th>
+              <th style="padding:10px;border:1px solid var(--gray-200);">5XL</th>
+            </tr>
+          </thead>
+          <tbody id="sizeChartBody"></tbody>
+        </table>
+      </div>
+      <ul style="margin-top:20px;font-size:0.85rem;color:var(--gray-700);line-height:1.8;padding-left:20px;">
+        <li><strong>Body Measurements:</strong> All figures refer to actual body size.</li>
+        <li><strong>Comfort Ease:</strong> Garments are crafted slightly looser than body measurements for a relaxed fit.</li>
+        <li><strong>Sizing Tip:</strong> If you're between sizes, we recommend the larger size.</li>
+        <li><strong>Disclaimer:</strong> A minor tolerance of +/- 1 inch is standard for all garment measurements.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <!-- RETURN/REFUND MODAL -->
 <div class="auth-modal" id="returnModal">
   <div class="auth-box" style="position:relative;max-width:420px;">
@@ -2757,7 +2937,7 @@ input, textarea, select { font-family: inherit; }
         <p>Your trusted clothing store in Kalyan, Mumbai. Offering premium quality fabrics, women's wear, and kids wear at affordable prices.</p>
         <div class="footer-social">
           <a href="#" onclick="openWhatsApp('918452803023'); return false;" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/memon_cloth_store?igsh=MXd4c2hjdGg1YWhiaw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
@@ -2798,7 +2978,7 @@ input, textarea, select { font-family: inherit; }
         </div>
         <div class="footer-contact-item">
           <i class="fas fa-clock"></i>
-          <p>Mon – Sat: 9:00 AM – 9:00 PM</p>
+          <p>Mon – Sun: 11:00 AM – 9:00 PM</p>
         </div>
       </div>
     </div>
@@ -2847,15 +3027,67 @@ async function loadCategoryFilters() {
 }
 
 // Load products from API
+// async function loadProducts() {
+//   try {
+//     const res = await fetch(API_BASE + '/products');
+//     products = await res.json();
+//     renderFeatured();
+//     renderProducts();
+//   } catch (err) {
+//     console.error('Failed to load products:', err);
+//   }
+// }
+
+// Load products from API
 async function loadProducts() {
   try {
     const res = await fetch(API_BASE + '/products');
     products = await res.json();
     renderFeatured();
     renderProducts();
+    initHeroCarousel();
   } catch (err) {
     console.error('Failed to load products:', err);
   }
+}
+
+let heroInterval = null;
+
+function initHeroCarousel() {
+  const slides = [
+    '/images/hero/hero1.png',
+    '/images/hero/hero2.png',
+    '/images/hero/hero3.png',
+  ];
+
+  const bgContainer = document.getElementById('heroBg');
+  const dotsContainer = document.getElementById('heroDots');
+
+  bgContainer.innerHTML = slides.map((img, i) => `
+    <div class="hero-slide ${i === 0 ? 'active' : ''}"
+         style="background-image:url('${img}')">
+    </div>
+  `).join('');
+
+  dotsContainer.innerHTML = slides.map((img, i) => `
+    <div class="hero-dot ${i === 0 ? 'active' : ''}"
+         onclick="goToHeroSlide(${i})">
+    </div>
+  `).join('');
+
+  let current = 0;
+
+  if (heroInterval) clearInterval(heroInterval);
+
+  heroInterval = setInterval(() => {
+    current = (current + 1) % slides.length;
+    goToHeroSlide(current);
+  }, 4500);
+}
+
+function goToHeroSlide(index) {
+  document.querySelectorAll('.hero-slide').forEach((el, i) => el.classList.toggle('active', i === index));
+  document.querySelectorAll('.hero-dot').forEach((el, i) => el.classList.toggle('active', i === index));
 }
 
 /* === ROUTING === */
@@ -2934,6 +3166,7 @@ function productCard(p) {
       <div class="product-img">
         <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80'">
         ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+        ${isOutOfStock(p) ? '<div class="sold-out-banner">Sold Out</div>' : ''}
       </div>
       <div class="product-info">
         <div class="product-cat">${catLabel(p.cat)}</div>
@@ -2941,7 +3174,13 @@ function productCard(p) {
         <p class="product-desc">${p.desc}</p>
         ${stockHtml}
         <div class="product-bottom">
-          <div class="product-price">₹${p.price} <small>/piece</small></div>
+          <div class="product-price" style="display:flex;flex-direction:column;gap:2px;">
+            <div style="white-space:nowrap;">
+              ${p.originalPrice && p.originalPrice > p.price ? `<span style="text-decoration:line-through;color:var(--gray-500);font-size:0.75rem;font-weight:400;margin-right:4px;">₹${p.originalPrice}</span>` : ''}
+              <span>₹${p.price}</span><small style="font-size:0.68rem;"> /piece</small>
+            </div>
+            ${p.originalPrice && p.originalPrice > p.price ? `<span style="font-size:0.7rem;color:var(--success);font-weight:600;">Save ₹${p.originalPrice - p.price}</span>` : ''}
+          </div>
           <div class="product-actions">
             <button class="btn-add-cart ${inCart ? 'added' : ''}" onclick="addToCart('${p._id}')" id="cartBtn-${p._id}" ${p.stock === 0 ? 'disabled' : ''}>
             <i class="fas fa-${inCart ? 'check' : 'shopping-bag'}"></i> ${inCart ? 'Added' : p.stock === 0 ? 'Out of Stock' : 'Add'}
@@ -2955,6 +3194,15 @@ function productCard(p) {
     </div>`;
 }
 
+function isOutOfStock(p) {
+  if (p.colors && p.colors.length > 0) {
+    const totalColorStock = p.colors.reduce((sum, c) => {
+      return sum + (c.sizes || []).reduce((s, sz) => s + (sz.stock || 0), 0);
+    }, 0);
+    return totalColorStock === 0;
+  }
+  return p.stock === 0;
+}
 function catLabel(c) {
   const map = { 'dress-material':'Dress Material', 'readymade':"Readymade", 'kids-wear':'Kids Wear', 'fabrics':'Fabrics & Materials', 'new-arrivals':'New Arrivals' };
   return map[c] || c;
@@ -3019,26 +3267,83 @@ document.getElementById('priceMax').addEventListener('input', e => {
 });
 
 /* === GALLERY === */
-function renderGallery() {
-  const images = [
-    { src: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80', alt: 'Store Interior' },
-    { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80', alt: 'Fabric Collection' },
-    { src: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=500&q=80', alt: 'Premium Fabrics' },
-    // { src: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=500&q=80', alt: 'School Uniforms' },
-    { src: 'https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=500&q=80', alt: "Women's Collection" },
-    { src: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80', alt: 'Silk Collection' },
-    { src: 'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=500&q=80', alt: 'Kids Wear' },
-    { src: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80', alt: 'New Arrivals' },
-    { src: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&q=80', alt: 'Uniforms Section' },
-    { src: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&q=80', alt: 'Fashion Display' }
-  ];
-  document.getElementById('galleryGrid').innerHTML = images.map(img => `
-    <div class="gallery-item" onclick="openLightbox('${img.src}')">
-      <img src="${img.src}" alt="${img.alt}" loading="lazy">
-    </div>
-  `).join('');
-}
+// function renderGallery() {
+//   const images = [
+//     { src: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80', alt: 'Store Interior' },
+//     { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80', alt: 'Fabric Collection' },
+//     { src: 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=500&q=80', alt: 'Premium Fabrics' },
+//     // { src: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=500&q=80', alt: 'School Uniforms' },
+//     { src: 'https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=500&q=80', alt: "Women's Collection" },
+//     { src: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80', alt: 'Silk Collection' },
+//     { src: 'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=500&q=80', alt: 'Kids Wear' },
+//     { src: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80', alt: 'New Arrivals' },
+//     { src: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&q=80', alt: 'Uniforms Section' },
+//     { src: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&q=80', alt: 'Fashion Display' }
+//   ];
+//   document.getElementById('galleryGrid').innerHTML = images.map(img => `
+//     <div class="gallery-item" onclick="openLightbox('${img.src}')">
+//       <img src="${img.src}" alt="${img.alt}" loading="lazy">
+//     </div>
+//   `).join('');
+// }
 
+
+
+/* === GALLERY === */
+function renderGallery() {
+
+    const images = [
+
+        // {
+        //     src: "images/shop1.jpg",
+        //     alt: "Shop"
+        // },
+
+        {
+            src: "images/counter.jpg",
+            alt: "Counter"
+        },
+
+        {
+            src: "images/cashcounter.jpg",
+            alt: "Cash Counter"
+        },
+
+        {
+            src: "images/shop_interior.jpg",
+            alt: "Shop Interior"
+        },
+
+        // {
+        //     src: "images/stolls.jpg",
+        //     alt: "Stoll"
+        // },
+
+        {
+            src: "images/shop_interiror.png",
+            alt: "Shop Interior"
+        },
+
+        // {
+        //     src: "images/stoll1.jpg",
+        //     alt: "stoll"
+        // },
+
+        {
+            src: "images/counter1.jpg",
+            alt: "counter1"
+        }
+
+    ];
+
+    document.getElementById("galleryGrid").innerHTML =
+        images.map(img => `
+            <div class="gallery-item" onclick="openLightbox('${img.src}')">
+                <img src="${img.src}" alt="${img.alt}" loading="lazy">
+            </div>
+        `).join("");
+
+}
 /* === LIGHTBOX === */
 function openLightbox(src) {
   document.getElementById('lightboxImg').src = src;
@@ -3107,7 +3412,7 @@ function updateCartBadge() {
   }
 }
 
-function addToCart(productId, size = null) {
+function addToCart(productId, size = null, color = null) {
   // Require login before adding to cart
   if (!requireLogin()) {
     return;
@@ -3116,12 +3421,17 @@ function addToCart(productId, size = null) {
   const product = products.find(p => p._id === productId);
   if (!product) return;
   
-  const cartKey = size ? `${productId}_${size}` : String(productId);
+  const cartKey = [productId, size, color].filter(Boolean).join('_');
   const existing = cart.find(item => item.cartKey === cartKey);
   if (existing) {
     existing.qty++;
   } else {
-    cart.push({ id: product._id, cartKey, name: product.name, price: product.price, img: product.img, cat: product.cat, qty: 1, size: size });
+    let itemImg = product.img;
+    if (color && product.colors) {
+      const colorObj = product.colors.find(c => c.name === color);
+      if (colorObj && colorObj.images && colorObj.images[0]) itemImg = colorObj.images[0];
+    }
+    cart.push({ id: product._id, cartKey, name: product.name, price: product.price, img: itemImg, cat: product.cat, qty: 1, size: size, color: color });
   }
   
   saveCart();
@@ -3210,11 +3520,10 @@ function renderCartSidebar() {
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-price">₹${item.price} × ${item.qty} = ₹${item.price * item.qty}</div>
         <div class="cart-item-controls">
-          <button class="qty-btn" onclick="updateQty(${item.id}, -1)"><i class="fas fa-minus"></i></button>
+         <button class="qty-btn" onclick="updateQty('${item.id}', -1)"><i class="fas fa-minus"></i></button>
           <span class="qty-val">${item.qty}</span>
-          <button class="qty-btn" onclick="updateQty(${item.id}, 1)"><i class="fas fa-plus"></i></button>
-          <button class="cart-item-remove" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i></button>
-        </div>
+          <button class="qty-btn" onclick="updateQty('${item.id}', 1)"><i class="fas fa-plus"></i></button>
+          <button class="cart-item-remove" onclick="removeFromCart('${item.id}')"><i class="fas fa-trash"></i></button>
       </div>
     </div>
   `).join('');
@@ -3253,16 +3562,17 @@ function renderCartPage() {
             <div class="cart-page-item-info">
               <h4>${item.name}</h4>
               <div class="cat">${catLabel(item.cat)}</div>
+              ${item.color ? `<div class="size">Color: ${item.color}</div>` : ''}
               ${item.size ? `<div class="size">Size: ${item.size}</div>` : ''}
               <div class="price">₹${item.price}</div>
             </div>
             <div class="cart-page-item-actions">
               <div class="cart-page-qty">
-                <button class="qty-btn" onclick="updateQty(${item.id}, -1)"><i class="fas fa-minus"></i></button>
+                <button class="qty-btn" onclick="updateQty('${item.id}', -1)"><i class="fas fa-minus"></i></button>
                 <span class="qty-val">${item.qty}</span>
-                <button class="qty-btn" onclick="updateQty(${item.id}, 1)"><i class="fas fa-plus"></i></button>
+                <button class="qty-btn" onclick="updateQty('${item.id}', 1)"><i class="fas fa-plus"></i></button>
               </div>
-              <button class="cart-page-remove" onclick="removeFromCart(${item.id})">
+              <button class="cart-page-remove" onclick="removeFromCart('${item.id}')">
                 <i class="fas fa-trash"></i> Remove
               </button>
             </div>
@@ -3961,7 +4271,7 @@ async function toggleWishlist(productId) {
       showToast('Added to wishlist');
     }
     saveWishlist();
-    renderProductDetails();
+    if (currentProduct) renderProductDetails(currentProduct._id);
     renderWishlist();
     renderFeatured();
     renderProducts();
@@ -4017,6 +4327,7 @@ function renderWishlist() {
           <div class="product-img">
             <img src="${p.img}" alt="${p.name}" loading="lazy">
             ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+            ${isOutOfStock(p) ? '<div class="sold-out-banner">Sold Out</div>' : ''}
           </div>
           <div class="product-info">
             <div class="product-cat">${catLabel(p.cat)}</div>
@@ -4024,11 +4335,12 @@ function renderWishlist() {
             <p class="product-desc">${p.desc}</p>
             <div class="product-bottom">
               <div class="product-price">₹${p.price}</div>
-              <button class="btn-add-cart" onclick="addToCart('${p._id}')">
-                <i class="fas fa-shopping-bag"></i> ${product.stock==0 ? "Out of Stock" : "Add to Cart"}
+              <button class="btn-add-cart" onclick="addToCart('${p._id}')" ${isOutOfStock(p) ? 'disabled' : ''}>
+                <i class="fas fa-shopping-bag"></i> ${isOutOfStock(p) ? "Out of Stock" : "Add to Cart"}
               </button>
             </div>
           </div>
+        </div>
         </div>
       `).join('')}
     </div>
@@ -4036,9 +4348,11 @@ function renderWishlist() {
 }
 
 /* === PRODUCT DETAILS === */
+let currentProduct = null;
 function renderProductDetails(productId) {
   const container = document.getElementById('productDetailsContent');
   const product = products.find(p => p._id === productId);
+  currentProduct = product;
   
   console.log("Product ID from URL:", productId);
   console.log("Products length:", products.length);
@@ -4059,6 +4373,8 @@ function renderProductDetails(productId) {
   
   document.getElementById('productBreadcrumb').textContent = product.name;
   const inWishlist = isInWishlist(product._id);
+  selectedSize = null;
+  selectedColor = null;
   
   const allImages = product.images && product.images.length > 0 ? product.images : [product.img];
   const mainImg = allImages[0];
@@ -4069,7 +4385,9 @@ function renderProductDetails(productId) {
     { size: 'L', stock: product.stock || 0 },
     { size: 'XL', stock: product.stock || 0 },
     { size: 'XXL', stock: product.stock || 0 },
-    { size: '3XL', stock: product.stock || 0 }
+    { size: '3XL', stock: product.stock || 0 },
+    { size: '4XL', stock: product.stock || 0 },
+    { size: '5XL', stock: product.stock || 0 }
   ];
   
   container.innerHTML = `
@@ -4077,6 +4395,7 @@ function renderProductDetails(productId) {
       <div class="product-gallery">
         <div class="product-main-image" id="mainImageContainer" onmousemove="handleZoom(event)" onmouseleave="handleZoomOut()">
           <img src="${mainImg}" alt="${product.name}" id="mainProductImage">
+          ${isOutOfStock(product) ? '<div class="sold-out-banner">Sold Out</div>' : ''}
         </div>
         ${allImages.length > 1 ? `
         <div class="product-thumbnails">
@@ -4090,7 +4409,11 @@ function renderProductDetails(productId) {
       <div class="product-info-details">
         <div class="product-cat">${catLabel(product.cat)}</div>
         <h1>${product.name}</h1>
-        <div class="product-price-large">₹${product.price}</div>
+        <div class="product-price-large">
+          ${product.originalPrice && product.originalPrice > product.price ? `<span style="text-decoration:line-through;color:var(--gray-500);font-size:1.4rem;font-weight:400;margin-right:10px;">₹${product.originalPrice}</span>` : ''}
+          ₹${product.price}
+          ${product.originalPrice && product.originalPrice > product.price ? `<span style="display:block;font-size:1rem;color:var(--success);font-weight:600;margin-top:4px;">Save ₹${product.originalPrice - product.price}</span>` : ''}
+        </div>
         
         <div class="product-stock-large">
           ${product.stock === 0 
@@ -4102,11 +4425,31 @@ function renderProductDetails(productId) {
         </div>
         
         <div class="product-desc-full">${product.desc}</div>
+
+        ${product.colors && product.colors.length > 0 ? `
+<div class="color-selector">
+    <h4><i class="fas fa-palette"></i> Available Colors</h4>
+
+    <div class="color-options">
+        ${product.colors.map((color, index) => `
+            <button
+                class="color-btn"
+                onclick="changeColorVariant(${index})">
+                ${color.name}
+            </button>
+        `).join("")}
+    </div>
+</div>
+` : ""}
         
-        ${['dress-material', 'hijabs'].includes(product.cat) ? '' : `  //size changer
+        ${['dress-material', 'hijabs'].includes(product.cat) ? '' : `
         <div class="size-selector">
-          <h4><i class="fas fa-ruler"></i> Select Size</h4>
-          <div class="size-options">
+        <h4 style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+            <span><i class="fas fa-ruler"></i> Select Size</span>
+            <a href="#" onclick="openSizeChart(); return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:var(--navy);background:var(--off-white);padding:6px 14px;border-radius:50px;border:1px solid var(--gray-200);transition:var(--transition);">
+              <i class="fas fa-ruler-combined"></i> Size Chart
+            </a>
+          </h4>          <div class="size-options">
             ${sizes.map(s => {
               const stockClass = s.stock === 0 ? 'out-of-stock' : '';
               const dotClass = s.stock === 0 ? 'no-stock' : s.stock <= 5 ? 'low-stock' : 'in-stock';
@@ -4143,6 +4486,14 @@ function renderProductDetails(productId) {
         </div>
       </div>
     </div>
+
+    <div class="reveal" style="margin-top:60px;text-align:center;">
+      <span class="section-label">You May Also Like</span>
+      <h2 class="section-title">More From This Collection</h2>
+    </div>
+    <div class="products-grid" id="relatedProductsGrid" style="margin-top:32px;">
+      <!-- Filled by JS -->
+    </div>
     
     <div class="reviews-section" id="reviewsSection">
       <div class="reviews-header">
@@ -4175,10 +4526,64 @@ function renderProductDetails(productId) {
   
   initStarRating();
   loadReviews(productId);
+  renderRelatedProducts(product);
+}
+
+function renderRelatedProducts(product) {
+  const related = products
+    .filter(p => p.cat === product.cat && p._id !== product._id)
+    .slice(0, 4);
+  const container = document.getElementById('relatedProductsGrid');
+  if (!container) return;
+
+  if (related.length === 0) {
+    container.parentElement.querySelector('.reveal').style.display = 'none';
+    container.innerHTML = '';
+    return;
+  }
+  container.innerHTML = related.map(productCard).join('');
+  setTimeout(initReveal, 50);
 }
 
 let selectedSize = null;
+let selectedColor = null;
 let selectedReviewRating = 0;
+
+function changeColorVariant(index) {
+  if (!currentProduct || !currentProduct.colors || !currentProduct.colors[index]) return;
+  const variant = currentProduct.colors[index];
+  selectedColor = variant.name;
+  selectedSize = null;
+
+  document.querySelectorAll('.color-btn').forEach((btn, i) => {
+    btn.classList.toggle('selected', i === index);
+  });
+
+  const images = (variant.images && variant.images.length > 0) ? variant.images : [currentProduct.img];
+  const mainImg = document.getElementById('mainProductImage');
+  if (mainImg) mainImg.src = images[0];
+
+  const thumbContainer = document.querySelector('.product-thumbnails');
+  if (thumbContainer) {
+    thumbContainer.innerHTML = images.map((img, i) => `
+      <div class="product-thumb ${i === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)">
+        <img src="${img}" alt="${currentProduct.name} view ${i+1}">
+      </div>
+    `).join('');
+  }
+
+  const sizeContainer = document.querySelector('.size-selector .size-options');
+  if (sizeContainer && variant.sizes) {
+    sizeContainer.innerHTML = variant.sizes.map(s => {
+      const stockClass = s.stock === 0 ? 'out-of-stock' : '';
+      const dotClass = s.stock === 0 ? 'no-stock' : s.stock <= 5 ? 'low-stock' : 'in-stock';
+      return `<button class="size-btn ${stockClass}" onclick="selectSize('${s.size}', this)" data-size="${s.size}" ${s.stock === 0 ? 'disabled' : ''}>
+        ${s.size}
+        <span class="stock-dot ${dotClass}"></span>
+      </button>`;
+    }).join('');
+  }
+}
 
 function selectSize(size, btn) {
   if (btn.classList.contains('out-of-stock')) return;
@@ -4189,11 +4594,15 @@ function selectSize(size, btn) {
 
 function addToCartWithSize(productId, category) {
   const noSizeCategories = ['dress-material', 'hijabs'];
+  if (currentProduct && currentProduct.colors && currentProduct.colors.length > 0 && !selectedColor) {
+    showToast('Please select a color first');
+    return;
+  }
   if (!noSizeCategories.includes(category) && !selectedSize) {
     showToast('Please select a size first');
     return;
   }
-  addToCart(productId, noSizeCategories.includes(category) ? null : selectedSize);
+  addToCart(productId, noSizeCategories.includes(category) ? null : selectedSize, selectedColor);
 }
 
 function changeMainImage(src, thumbEl) {
@@ -4619,7 +5028,8 @@ productCard = function(p) {
           <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80'">
         </a>
         ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-        <button class="wishlist-remove" onclick="event.stopPropagation();toggleWishlist(${p._id})" title="Add to wishlist" style="${inWishlist ? 'background:var(--danger);color:var(--white);' : ''}">
+        ${isOutOfStock(p) ? '<div class="sold-out-banner">Sold Out</div>' : ''}
+        <button class="wishlist-remove" onclick="event.stopPropagation();toggleWishlist('${p._id}')" title="Add to wishlist" style="${inWishlist ? 'background:var(--danger);color:var(--white);' : ''}">
           <i class="fas fa-heart"></i>
         </button>
       </div>
@@ -4628,7 +5038,11 @@ productCard = function(p) {
         <h3 class="product-name"><a href="#product/${p._id}" style="color:inherit;">${p.name}</a></h3>
         <p class="product-desc">${p.desc}</p>
         <div class="product-bottom">
-          <div class="product-price">₹${p.price} <small>/piece</small></div>
+          <div class="product-price">
+            ${p.originalPrice && p.originalPrice > p.price ? `<span style="text-decoration:line-through;color:var(--gray-500);font-size:0.85rem;font-weight:400;margin-right:6px;">₹${p.originalPrice}</span>` : ''}
+            ₹${p.price} <small>/piece</small>
+            ${p.originalPrice && p.originalPrice > p.price ? `<div style="font-size:0.72rem;color:var(--success);font-weight:600;margin-top:2px;">Save ₹${p.originalPrice - p.price}</div>` : ''}
+          </div>
           <div class="product-actions">
             <button class="btn-add-cart ${inCart ? 'added' : ''}" onclick="addToCart('${p._id}')" id="cartBtn-${p._id}">
               <i class="fas fa-${inCart ? 'check' : 'shopping-bag'}"></i> ${inCart ? 'Added' : 'Add'}
@@ -4664,6 +5078,45 @@ if (token) {
   });
 }
 
+const SIZE_CHART_DATA = {
+  inches: {
+    Bust: { S: 36, M: 38, L: 40, XL: 42, XXL: 44, '3XL': 46, '4XL': 48, '5XL': 50 },
+    Waist: { S: 34, M: 36, L: 38, XL: 40, XXL: 42, '3XL': 44, '4XL': 46, '5XL': 48 },
+    Hip: { S: 37, M: 39, L: 41, XL: 43, XXL: 45, '3XL': 47, '4XL': 49, '5XL': 51 }
+  },
+  cm: {
+    Bust: { S: 91, M: 97, L: 102, XL: 107, XXL: 112, '3XL': 117, '4XL': 122, '5XL': 127 },
+    Waist: { S: 86, M: 91, L: 97, XL: 102, XXL: 107, '3XL': 112, '4XL': 117, '5XL': 122 },
+    Hip: { S: 94, M: 99, L: 104, XL: 109, XXL: 114, '3XL': 119, '4XL': 124, '5XL': 129 }
+  }
+};
+
+function renderSizeChartTable(unit) {
+  const data = SIZE_CHART_DATA[unit];
+  const rows = Object.keys(data);
+  document.getElementById('sizeChartBody').innerHTML = rows.map(row => `
+    <tr>
+      <td style="padding:10px;border:1px solid var(--gray-200);font-weight:600;background:var(--off-white);">${row.toUpperCase()}</td>
+      ${['S','M','L','XL','XXL','3XL','4XL','5XL'].map(sz => `<td style="padding:10px;border:1px solid var(--gray-200);">${data[row][sz]}</td>`).join('')}
+    </tr>
+  `).join('');
+}
+
+function switchSizeUnit(unit) {
+  document.getElementById('unitInches').classList.toggle('active', unit === 'inches');
+  document.getElementById('unitCm').classList.toggle('active', unit === 'cm');
+  renderSizeChartTable(unit);
+}
+
+function openSizeChart() {
+  renderSizeChartTable('inches');
+  switchSizeUnit('inches');
+  document.getElementById('sizeChartModal').classList.add('open');
+}
+
+function closeSizeChart() {
+  document.getElementById('sizeChartModal').classList.remove('open');
+}
 // Render My Orders page
 function openReturnModal(orderId) {
   document.getElementById('returnOrderId').value = orderId;

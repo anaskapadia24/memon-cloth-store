@@ -51,7 +51,7 @@ router.get('/:id', async (req, res) => {
 // Create product (admin) - with sizes and multiple images
 router.post('/', adminAuth, upload.array('images', 10), async (req, res) => {
   try {
-    const { name, cat, price, desc, badge, imageUrl, stock, sizes, sku } = req.body;
+    const { name, cat, price, originalPrice, desc, badge, imageUrl, stock, sizes, sku } = req.body;
 
     let img = imageUrl || 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80';
     let images = [];
@@ -76,6 +76,7 @@ router.post('/', adminAuth, upload.array('images', 10), async (req, res) => {
       name,
       cat,
       price,
+      originalPrice: originalPrice || 0,
       desc,
       img,
       images,
@@ -94,7 +95,7 @@ router.post('/', adminAuth, upload.array('images', 10), async (req, res) => {
 // Update product (admin) - with sizes and multiple images
 router.put('/:id', adminAuth, upload.array('images', 10), async (req, res) => {
   try {
-    const { name, cat, price, desc, badge, imageUrl, stock, sizes, sku } = req.body;
+    const { name, cat, price, originalPrice, desc, badge, imageUrl, stock, sizes, sku } = req.body;
     const product = await Product.findById(req.params.id);
 
     if (!product) {
@@ -105,6 +106,7 @@ router.put('/:id', adminAuth, upload.array('images', 10), async (req, res) => {
     product.cat = cat || product.cat;
     product.sku = sku !== undefined ? sku : product.sku;
     product.price = price !== undefined ? price : product.price;
+    product.originalPrice = originalPrice !== undefined ? originalPrice : product.originalPrice;
     product.desc = desc !== undefined ? desc : product.desc;
     product.badge = badge !== undefined ? badge : product.badge;
     product.stock = stock !== undefined ? stock : product.stock;
@@ -146,4 +148,128 @@ router.delete('/:id', adminAuth, async (req, res) => {
   }
 });
 
+// Add a color variant to a product (admin) - own photos + own size/stock
+router.post('/:id/colors', adminAuth, upload.array('images', 10), async (req, res) => {
+  try {
+    const { name, sizes } = req.body;
+
+    if (!name || !name.trim()) {
+      return res.status(400).json({ error: 'Color name is required' });
+    }
+
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    let parsedSizes = [];
+    if (sizes) {
+      try {
+        parsedSizes = typeof sizes === 'string' ? JSON.parse(sizes) : sizes;
+      } catch (e) {
+        parsedSizes = [];
+      }
+    }
+
+    let images = [];
+    if (req.files && req.files.length > 0) {
+      images = req.files.map(f => `/uploads/${f.filename}`);
+    }
+
+    product.colors.push({
+      name: name.trim(),
+      images,
+      sizes: parsedSizes
+    });
+
+    await product.save();
+    res.status(201).json(product);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Update a color variant (admin) - by its position in the colors array
+router.put('/:id/colors/:colorIndex', adminAuth, upload.array('images', 10), async (req, res) => {
+  try {
+    const { name, sizes } = req.body;
+    const colorIndex = parseInt(req.params.colorIndex);
+
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+    if (!product.colors[colorIndex]) {
+      return res.status(404).json({ error: 'Color variant not found' });
+    }
+
+    if (name) product.colors[colorIndex].name = name.trim();
+
+    if (sizes !== undefined) {
+      try {
+        product.colors[colorIndex].sizes = typeof sizes === 'string' ? JSON.parse(sizes) : sizes;
+      } catch (e) {
+        // Keep existing sizes
+      }
+    }
+
+    if (req.files && req.files.length > 0) {
+      product.colors[colorIndex].images = req.files.map(f => `/uploads/${f.filename}`);
+    }
+
+    await product.save();
+    res.json(product);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Delete a color variant (admin)
+router.delete('/:id/colors/:colorIndex', adminAuth, async (req, res) => {
+  try {
+    const colorIndex = parseInt(req.params.colorIndex);
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+    if (!product.colors[colorIndex]) {
+      return res.status(404).json({ error: 'Color variant not found' });
+    }
+
+    product.colors.splice(colorIndex, 1);
+    await product.save();
+    res.json(product);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Mark a product as sold out (admin) - zeroes all stock, sizes, and color variant sizes
+router.put('/:id/sold-out', adminAuth, async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    product.stock = 0;
+    if (product.sizes && product.sizes.length > 0) {
+      product.sizes.forEach(s => { s.stock = 0; });
+    }
+    if (product.colors && product.colors.length > 0) {
+      product.colors.forEach(c => {
+        if (c.sizes && c.sizes.length > 0) {
+          c.sizes.forEach(s => { s.stock = 0; });
+        }
+      });
+    }
+
+    await product.save();
+    res.json(product);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;
+

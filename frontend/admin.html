@@ -153,6 +153,9 @@ input,textarea,select{font-family:inherit}
   .login-box{margin:24px;padding:40px 28px}
   .tabs-inner{gap:0}
   .tab-btn{padding:14px 16px;font-size:.8rem}
+  .data-item{flex-direction:column;align-items:stretch;}
+  .data-item img{width:100%;height:160px;border-radius:var(--radius);}
+  .data-item .actions{width:100%;justify-content:flex-end;}
 }
 @media(max-width:480px){
   .admin-stats{grid-template-columns:1fr}
@@ -463,10 +466,15 @@ input,textarea,select{font-family:inherit}
         <select id="pCat" required></select>
     </div>
 
-    <div class="form-group">
+    <<div class="form-group">
         <label>Price (₹) *</label>
         <input type="number" id="pPrice" required>
     </div>
+</div>
+
+<div class="form-group">
+    <label>Original Price (₹) — optional, leave blank if not on sale</label>
+    <input type="number" id="pOriginalPrice" placeholder="e.g. 2250 (shown struck-through)">
 </div>
 
 <div class="form-group">
@@ -494,7 +502,7 @@ input,textarea,select{font-family:inherit}
           <input type="url" id="pImage" placeholder="Or paste image URL here">
         </div>
         <div class="form-group">
-          <label>Size-wise Stock</label>
+          <label>Size-wise Stock (used only if this product has no color variants)</label>
           <div class="size-grid" id="sizeGrid">
             <div class="size-item"><label>S</label><input type="number" id="sizeS" min="0" value="0" data-size="S"></div>
             <div class="size-item"><label>M</label><input type="number" id="sizeM" min="0" value="0" data-size="M"></div>
@@ -502,7 +510,21 @@ input,textarea,select{font-family:inherit}
             <div class="size-item"><label>XL</label><input type="number" id="sizeXL" min="0" value="0" data-size="XL"></div>
             <div class="size-item"><label>XXL</label><input type="number" id="sizeXXL" min="0" value="0" data-size="XXL"></div>
             <div class="size-item"><label>3XL</label><input type="number" id="size3XL" min="0" value="0" data-size="3XL"></div>
+            <div class="size-item"><label>4XL</label><input type="number" id="size4XL" min="0" value="0" data-size="4XL"></div>
+            <div class="size-item"><label>5XL</label><input type="number" id="size5XL" min="0" value="0" data-size="5XL"></div>
           </div>
+        </div>
+        <div class="form-group" id="colorVariantsSection" style="display:none;">
+          <label>Color Variants</label>
+          <div id="colorVariantsList" style="display:grid;gap:10px;margin-bottom:12px;"></div>
+          <button type="button" class="btn btn-sm btn-outline" onclick="openColorModal()">
+            <i class="fas fa-plus"></i> Add Color
+          </button>
+        </div>
+        <div class="form-group" id="colorVariantsHint" style="display:none;">
+          <p style="font-size:.82rem;color:var(--gray-500);background:var(--off-white);padding:12px;border-radius:var(--radius);">
+            <i class="fas fa-info-circle" style="color:var(--gold);"></i> Save this product first, then you'll be able to add color variants with their own photos and stock.
+          </p>
         </div>
         <div class="form-group">
           <label>Description</label>
@@ -547,6 +569,54 @@ input,textarea,select{font-family:inherit}
       <button class="btn btn-outline" onclick="closeCategoryModal()">Cancel</button>
       <button class="btn btn-primary" onclick="saveCategory()">
         <i class="fas fa-save"></i> Save Category
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR VARIANT MODAL -->
+<div class="modal-overlay" id="colorModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="colorModalTitle">Add Color</h3>
+      <button class="modal-close" onclick="closeColorModal()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="colorForm">
+        <input type="hidden" id="colorIndex">
+        <div class="form-group">
+          <label>Color Name *</label>
+          <input type="text" id="colorName" required placeholder="e.g. White & Green">
+        </div>
+        <div class="form-group">
+          <label>Photos for this Color</label>
+          <div class="image-upload-area" id="colorImageUploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click to browse photos for this color</p>
+            <small>Supports: JPG, PNG, WebP (Max 5MB each, up to 10 images)</small>
+            <input type="file" id="colorImageFile" accept="image/*" multiple>
+          </div>
+          <div class="multi-image-preview" id="colorImagePreview"></div>
+        </div>
+        <div class="form-group">
+          <label>Size-wise Stock for this Color</label>
+          <div class="size-grid" id="colorSizeGrid">
+            <div class="size-item"><label>S</label><input type="number" id="colorSizeS" min="0" value="0" data-size="S"></div>
+            <div class="size-item"><label>M</label><input type="number" id="colorSizeM" min="0" value="0" data-size="M"></div>
+            <div class="size-item"><label>L</label><input type="number" id="colorSizeL" min="0" value="0" data-size="L"></div>
+            <div class="size-item"><label>XL</label><input type="number" id="colorSizeXL" min="0" value="0" data-size="XL"></div>
+            <div class="size-item"><label>XXL</label><input type="number" id="colorSizeXXL" min="0" value="0" data-size="XXL"></div>
+            <div class="size-item"><label>3XL</label><input type="number" id="colorSize3XL" min="0" value="0" data-size="3XL"></div>
+            <div class="size-item"><label>4XL</label><input type="number" id="colorSize4XL" min="0" value="0" data-size="4XL"></div>
+            <div class="size-item"><label>5XL</label><input type="number" id="colorSize5XL" min="0" value="0" data-size="5XL"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeColorModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveColorVariant()">
+        <i class="fas fa-save"></i> Save Color
       </button>
     </div>
   </div>
@@ -796,6 +866,7 @@ ${
            ${p.badge ? '• ' + p.badge : ''}</p>
       </div>
       <div class="actions">
+        ${p.stock > 0 ? `<button class="btn btn-sm btn-outline" style="color:var(--danger);border-color:var(--danger);" onclick="markSoldOut('${p._id}')" title="Mark Sold Out"><i class="fas fa-ban"></i></button>` : ''}
         <button class="btn btn-sm btn-outline" onclick="editProduct('${p._id}')"><i class="fas fa-edit"></i></button>
         <button class="btn btn-sm btn-danger" onclick="deleteProduct('${p._id}')"><i class="fas fa-trash"></i></button>
       </div>
@@ -827,9 +898,14 @@ function openProductModal(id = null) {
     document.getElementById('pCat').value = p.cat;
     document.getElementById('pSku').value = p.sku || '';
     document.getElementById('pPrice').value = p.price;
+    document.getElementById('pOriginalPrice').value = p.originalPrice || '';
     document.getElementById('pStock').value = p.stock ?? 0;
     document.getElementById('pDesc').value = p.desc;
     document.getElementById('pBadge').value = p.badge || '';
+
+    document.getElementById('colorVariantsSection').style.display = 'block';
+    document.getElementById('colorVariantsHint').style.display = 'none';
+    renderColorVariantsList(p);
     
     if (p.sizes && Array.isArray(p.sizes)) {
       p.sizes.forEach(s => {
@@ -851,9 +927,10 @@ function openProductModal(id = null) {
     }
   } else {
     document.getElementById('productModalTitle').textContent = 'Add Product';
+    document.getElementById('colorVariantsSection').style.display = 'none';
+    document.getElementById('colorVariantsHint').style.display = 'block';
   }
 }
-
 function closeProductModal() {
   document.getElementById('productModal').classList.remove('open');
   removeImage();
@@ -861,6 +938,171 @@ function closeProductModal() {
 
 function editProduct(id) {
   openProductModal(id);
+}
+
+// COLOR VARIANTS
+let uploadedColorImages = [];
+let currentColorProductId = null;
+
+function renderColorVariantsList(product) {
+  const container = document.getElementById('colorVariantsList');
+  if (!product.colors || product.colors.length === 0) {
+    container.innerHTML = '<p style="font-size:.85rem;color:var(--gray-500);">No colors added yet.</p>';
+    return;
+  }
+  container.innerHTML = product.colors.map((c, i) => {
+    const totalStock = (c.sizes || []).reduce((sum, s) => sum + (s.stock || 0), 0);
+    const thumb = (c.images && c.images[0]) ? c.images[0] : '';
+    return `
+      <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--off-white);border-radius:var(--radius);border:1px solid var(--gray-200);">
+        ${thumb ? `<img src="${thumb}" style="width:44px;height:44px;border-radius:6px;object-fit:cover;">` : '<div style="width:44px;height:44px;border-radius:6px;background:var(--gray-200);"></div>'}
+        <div style="flex:1;">
+          <div style="font-size:.85rem;font-weight:600;color:var(--navy);">${c.name}</div>
+          <div style="font-size:.75rem;color:var(--gray-500);">${totalStock} in stock • ${(c.images || []).length} photo(s)</div>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline" onclick="openColorModal(${i})"><i class="fas fa-edit"></i></button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="deleteColorVariant(${i})"><i class="fas fa-trash"></i></button>
+      </div>
+    `;
+  }).join('');
+}
+
+function openColorModal(index = null) {
+  currentColorProductId = document.getElementById('productId').value;
+  document.getElementById('colorModal').classList.add('open');
+  document.getElementById('colorForm').reset();
+  document.getElementById('colorIndex').value = '';
+  uploadedColorImages = [];
+  document.getElementById('colorImagePreview').innerHTML = '';
+  document.querySelectorAll('#colorSizeGrid input').forEach(inp => inp.value = 0);
+
+  if (index !== null) {
+    const p = db.products.find(x => x._id === currentColorProductId);
+    const c = p.colors[index];
+    document.getElementById('colorModalTitle').textContent = 'Edit Color';
+    document.getElementById('colorIndex').value = index;
+    document.getElementById('colorName').value = c.name;
+    if (c.sizes && Array.isArray(c.sizes)) {
+      c.sizes.forEach(s => {
+        const inp = document.querySelector(`#colorSizeGrid input[data-size="${s.size}"]`);
+        if (inp) inp.value = s.stock ?? 0;
+      });
+    }
+    if (c.images && c.images.length > 0) {
+      uploadedColorImages = [...c.images];
+      renderColorImagePreview();
+    }
+  } else {
+    document.getElementById('colorModalTitle').textContent = 'Add Color';
+  }
+}
+
+function closeColorModal() {
+  document.getElementById('colorModal').classList.remove('open');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const uploadArea = document.getElementById('colorImageUploadArea');
+  const fileInput = document.getElementById('colorImageFile');
+  if (uploadArea && fileInput) {
+    uploadArea.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (e) => {
+      const remaining = 10 - uploadedColorImages.length;
+      const toProcess = Array.from(e.target.files).slice(0, remaining);
+      toProcess.forEach(file => {
+        if (!file.type.match('image.*')) return;
+        if (file.size > 5 * 1024 * 1024) {
+          showToast(`${file.name} exceeds 5MB`, 'error');
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          uploadedColorImages.push(ev.target.result);
+          renderColorImagePreview();
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+  }
+});
+
+function renderColorImagePreview() {
+  const container = document.getElementById('colorImagePreview');
+  container.innerHTML = uploadedColorImages.map((src, i) => `
+    <div class="multi-image-thumb">
+      <img src="${src}" alt="Color image ${i + 1}">
+      <button type="button" class="remove-image" onclick="uploadedColorImages.splice(${i},1);renderColorImagePreview();"><i class="fas fa-times"></i></button>
+    </div>
+  `).join('');
+}
+
+async function saveColorVariant() {
+  const name = document.getElementById('colorName').value.trim();
+  if (!name) {
+    showToast('Color name is required', 'error');
+    return;
+  }
+  const indexVal = document.getElementById('colorIndex').value;
+
+  const sizes = [];
+  document.querySelectorAll('#colorSizeGrid input').forEach(inp => {
+    sizes.push({ size: inp.dataset.size, stock: Number(inp.value) || 0 });
+  });
+
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('sizes', JSON.stringify(sizes));
+
+  uploadedColorImages.forEach((imgData, i) => {
+    if (imgData.startsWith('data:image')) {
+      const ext = imgData.substring(imgData.indexOf('/') + 1, imgData.indexOf(';'));
+      const byteString = atob(imgData.split(',')[1]);
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      for (let j = 0; j < byteString.length; j++) ia[j] = byteString.charCodeAt(j);
+      const blob = new Blob([ab], { type: 'image/' + ext });
+      formData.append('images', blob, 'color-' + i + '.' + ext);
+    }
+  });
+
+  try {
+    const url = indexVal
+      ? API_BASE + '/products/' + currentColorProductId + '/colors/' + indexVal
+      : API_BASE + '/products/' + currentColorProductId + '/colors';
+    const res = await fetch(url, {
+      method: indexVal ? 'PUT' : 'POST',
+      headers: { 'Authorization': 'Bearer admin-' + ADMIN_PASSWORD },
+      body: formData
+    });
+    if (!res.ok) throw new Error('Failed to save color');
+
+    await loadAllData();
+    const p = db.products.find(x => x._id === currentColorProductId);
+    renderColorVariantsList(p);
+    closeColorModal();
+    showToast('Color variant saved');
+  } catch (err) {
+    showToast('Failed to save color variant', 'error');
+  }
+}
+
+async function deleteColorVariant(index) {
+  if (!confirm('Delete this color variant?')) return;
+  const productId = document.getElementById('productId').value;
+  try {
+    const res = await fetch(API_BASE + '/products/' + productId + '/colors/' + index, {
+      method: 'DELETE',
+      headers: { 'Authorization': 'Bearer admin-' + ADMIN_PASSWORD }
+    });
+    if (!res.ok) throw new Error('Failed to delete color');
+
+    await loadAllData();
+    const p = db.products.find(x => x._id === productId);
+    renderColorVariantsList(p);
+    showToast('Color variant deleted');
+  } catch (err) {
+    showToast('Failed to delete color variant', 'error');
+  }
 }
 
 // Image upload handlers
@@ -961,6 +1203,7 @@ async function saveProduct() {
   formData.append('cat', document.getElementById('pCat').value);
   formData.append('sku', document.getElementById('pSku').value.trim());
   formData.append('price', Number(document.getElementById('pPrice').value));
+  formData.append('originalPrice', Number(document.getElementById('pOriginalPrice').value) || 0);
   formData.append('stock', totalSizeStock > 0 ? totalSizeStock : Number(document.getElementById('pStock').value));
   formData.append('sizes', JSON.stringify(sizes));
   formData.append('desc', document.getElementById('pDesc').value);
@@ -1020,6 +1263,22 @@ showToast(id ? 'Product updated' : 'Product added');
   }
 }
 
+async function markSoldOut(id) {
+  if (!confirm('Mark this product as Sold Out? This will set all stock (including any color variants) to 0.')) return;
+  try {
+    const res = await fetch(API_BASE + '/products/' + id + '/sold-out', {
+      method: 'PUT',
+      headers: { 'Authorization': 'Bearer admin-' + ADMIN_PASSWORD }
+    });
+    if (!res.ok) throw new Error('Failed to update stock');
+
+    await loadAllData();
+    renderProducts();
+    showToast('Product marked as Sold Out');
+  } catch (err) {
+    showToast('Failed to mark as sold out', 'error');
+  }
+}
 async function deleteProduct(id) {
     if (!confirm('Are you sure you want to delete this product?')) return;
 
