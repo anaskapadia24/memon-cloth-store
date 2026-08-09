@@ -2778,13 +2778,24 @@ input, textarea, select { font-family: inherit; }
           <button class="cat-btn active" data-cat="all">All</button>
         </div>
 
-        <div class="price-filter">
+       <div class="price-filter">
           <label>₹<span id="priceMinVal">0</span></label>
           <input type="range" id="priceMin" min="0" max="5000" value="0" step="50">
           <span style="color:var(--gray-500);font-size:0.8rem;">—</span>
           <input type="range" id="priceMax" min="0" max="5000" value="5000" step="50">
           <label>₹<span id="priceMaxVal">5000</span></label>
         </div>
+      </div>
+      <div class="cat-filters" id="sizeFilters" style="margin-bottom:24px;">
+        <span style="font-size:0.82rem;font-weight:600;color:var(--gray-700);align-self:center;margin-right:4px;">Filter by Size:</span>
+        <button class="cat-btn" data-size="S">S</button>
+        <button class="cat-btn" data-size="M">M</button>
+        <button class="cat-btn" data-size="L">L</button>
+        <button class="cat-btn" data-size="XL">XL</button>
+        <button class="cat-btn" data-size="XXL">XXL</button>
+        <button class="cat-btn" data-size="3XL">3XL</button>
+        <button class="cat-btn" data-size="4XL">4XL</button>
+        <button class="cat-btn" data-size="5XL">5XL</button>
       </div>
       <div class="products-grid" id="productsGrid">
         <!-- Filled by JS -->
@@ -3403,6 +3414,9 @@ function renderProducts(filter = 'all', search = '') {
   const pMin = parseInt(document.getElementById('priceMin')?.value || 0);
   const pMax = parseInt(document.getElementById('priceMax')?.value || 99999);
   filtered = filtered.filter(p => p.price >= pMin && p.price <= pMax);
+  if (selectedSizes.size > 0) {
+    filtered = filtered.filter(p => [...selectedSizes].some(sz => productHasSize(p, sz)));
+  }
   const grid = document.getElementById('productsGrid');
   const noRes = document.getElementById('noResults');
   if (filtered.length === 0) {
@@ -3418,10 +3432,35 @@ function renderProducts(filter = 'all', search = '') {
 /* === CATEGORY FILTERS === */
 document.getElementById('catFilters').addEventListener('click', e => {
   if (!e.target.classList.contains('cat-btn')) return;
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#catFilters .cat-btn').forEach(b => b.classList.remove('active'));
   e.target.classList.add('active');
   renderProducts(e.target.dataset.cat, document.getElementById('productSearch').value);
 });
+
+let selectedSizes = new Set();
+document.getElementById('sizeFilters').addEventListener('click', e => {
+  if (!e.target.classList.contains('cat-btn')) return;
+  const size = e.target.dataset.size;
+  if (selectedSizes.has(size)) {
+    selectedSizes.delete(size);
+    e.target.classList.remove('active');
+  } else {
+    selectedSizes.add(size);
+    e.target.classList.add('active');
+  }
+  const activeCat = document.querySelector('#catFilters .cat-btn.active');
+  renderProducts(activeCat ? activeCat.dataset.cat : 'all', document.getElementById('productSearch').value);
+});
+
+function productHasSize(p, size) {
+  if (p.colors && p.colors.length > 0) {
+    return p.colors.some(c => (c.sizes || []).some(s => s.size === size && s.stock > 0));
+  }
+  if (p.sizes && p.sizes.length > 0) {
+    return p.sizes.some(s => s.size === size && s.stock > 0);
+  }
+  return false;
+}
 
 document.getElementById('productSearch').addEventListener('input', e => {
   const active = document.querySelector('.cat-btn.active');
