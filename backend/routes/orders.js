@@ -3,6 +3,7 @@ const Order = require('../models/Order');
 const Product = require('../models/Product');
 const { auth, adminAuth } = require('../middleware/auth');
 const { sendOrderConfirmationEmail } = require('../utils/email');
+const PDFDocument = require('pdfkit');
 const router = express.Router();
 
 // Create order (customer)
@@ -187,6 +188,93 @@ router.put('/:id/return-status', adminAuth, async (req, res) => {
 
     await order.save();
     res.json(order);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Generate invoice PDF (admin)
+router.get('/:id/invoice', adminAuth, async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id);
+    if (!order) {
+      return res.status(404).json({ error: 'Order not found' });
+    }
+
+    const orderNumber = order._id.toString().slice(-8).toUpperCase();
+    const orderDate = new Date(order.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=invoice-${orderNumber}.pdf`);
+
+    const doc = new PDFDocument({ margin: 50, size: 'A4' });
+    doc.pipe(res);
+
+    // Header
+    doc.fontSize(20).font('Helvetica-Bold').fillColor('#0a1628').text('MEMON CLOTH STORE', 50, 50);
+
+    doc.fontSize(18).font('Helvetica-Bold').fillColor('#0a1628').text('INVOICE', 350, 50, { width: 200, align: 'right' });
+    doc.fontSize(9).font('Helvetica').fillColor('#666').text(`Date: ${orderDate}`, 350, 74, { width: 200, align: 'right' });
+
+    doc.moveTo(50, 100).lineTo(550, 100).strokeColor('#c9a84c').lineWidth(1.5).stroke();
+
+    // Sold By / Billing columns
+    doc.fontSize(10).font('Helvetica-Bold').fillColor('#0a1628').text('Sold By:', 50, 118);
+    doc.fontSize(9).font('Helvetica').fillColor('#333').text(
+      'Memon Cloth Store\nGhass Bazar Road, Near National Urdu\nPrimary School, Kalyan West, Mumbai\nMaharashtra, India\nPhone: +91 84528 03023',
+      50, 134, { width: 240 }
+    );
+
+    doc.fontSize(10).font('Helvetica-Bold').fillColor('#0a1628').text('Billing / Shipping Address:', 320, 118);
+    doc.fontSize(9).font('Helvetica').fillColor('#333').text(
+      `${order.customer.name}\n${order.customer.address}\n${order.customer.city}, ${order.customer.state} - ${order.customer.pin}\nPhone: ${order.customer.phone}`,
+      320, 134, { width: 230 }
+    );
+
+    // Order meta
+    const metaY = 235;
+    doc.fontSize(9).font('Helvetica-Bold').fillColor('#0a1628').text(`Order Number: #${orderNumber}`, 50, metaY);
+    doc.text(`Payment Method: ${order.payment}`, 320, metaY);
+
+    // Table header
+    const tableTop = 270;
+    doc.moveTo(50, tableTop - 8).lineTo(550, tableTop - 8).strokeColor('#e0e0e0').lineWidth(1).stroke();
+    doc.fontSize(9).font('Helvetica-Bold').fillColor('#0a1628');
+    doc.text('Sl No', 50, tableTop);
+    doc.text('Description', 90, tableTop);
+    doc.text('Qty', 340, tableTop, { width: 40, align: 'right' });
+    doc.text('Price', 400, tableTop, { width: 60, align: 'right' });
+    doc.text('Amount', 470, tableTop, { width: 80, align: 'right' });
+    doc.moveTo(50, tableTop + 15).lineTo(550, tableTop + 15).strokeColor('#e0e0e0').lineWidth(1).stroke();
+
+    // Table rows
+    let y = tableTop + 25;
+    doc.font('Helvetica').fillColor('#333');
+    order.items.forEach((item, i) => {
+      const desc = item.name + (item.size ? ` (${item.size})` : '');
+      doc.fontSize(9);
+      doc.text(String(i + 1), 50, y);
+      doc.text(desc, 90, y, { width: 240 });
+      doc.text(String(item.qty), 340, y, { width: 40, align: 'right' });
+      doc.text(`Rs. ${item.price}`, 400, y, { width: 60, align: 'right' });
+      doc.text(`Rs. ${item.price * item.qty}`, 470, y, { width: 80, align: 'right' });
+      y += 22;
+    });
+
+    doc.moveTo(50, y).lineTo(550, y).strokeColor('#e0e0e0').lineWidth(1).stroke();
+    y += 12;
+
+    doc.fontSize(11).font('Helvetica-Bold').fillColor('#0a1628');
+    doc.text('TOTAL', 400, y, { width: 60, align: 'right' });
+    doc.text(`Rs. ${order.total}`, 470, y, { width: 80, align: 'right' });
+
+    y += 50;
+    doc.fontSize(8).font('Helvetica').fillColor('#999').text(
+      'Thank you for shopping with Memon Cloth Store! For queries, contact us on WhatsApp at +91 84528 03023.',
+      50, y, { width: 500, align: 'center' }
+    );
+
+    doc.end();
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

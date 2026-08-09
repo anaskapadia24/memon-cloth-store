@@ -1360,6 +1360,7 @@ function renderOrders() {
           <select onchange="promptStatusUpdate('${o._id}', this)" style="padding:6px 12px;border-radius:6px;border:1px solid var(--gray-200);font-size:.8rem;">
             ${TRACKING_STAGES.map(s => `<option value="${s}" ${o.status === s ? 'selected' : ''}>${TRACKING_LABELS[s]}</option>`).join('')}
           </select>
+          <button class="btn btn-sm btn-outline" onclick="downloadInvoice('${o._id}')" title="Download Invoice"><i class="fas fa-file-pdf"></i></button>
           <button class="btn btn-sm btn-danger" onclick="deleteOrder('${o._id}')"><i class="fas fa-trash"></i></button>
         </div>
       </div>
@@ -1427,6 +1428,24 @@ async function promptStatusUpdate(id, selectEl) {
     showToast('Order status updated');
   } catch (err) {
     showToast('Failed to update order status', 'error');
+  }
+}
+
+async function downloadInvoice(id) {
+  try {
+    const res = await fetch(API_BASE + '/orders/' + id + '/invoice', {
+      headers: { 'Authorization': 'Bearer admin-' + ADMIN_PASSWORD }
+    });
+    if (!res.ok) throw new Error('Failed to generate invoice');
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `invoice-${id.slice(-8).toUpperCase()}.pdf`;
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (err) {
+    showToast('Failed to download invoice', 'error');
   }
 }
 

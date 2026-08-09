@@ -1527,8 +1527,8 @@ input, textarea, select { font-family: inherit; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 48px;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
+  gap: 40px;
   padding-bottom: 60px;
 }
 .footer-brand .nav-brand-name { font-size: 1.6rem; }
@@ -2252,6 +2252,35 @@ input, textarea, select { font-family: inherit; }
 .btn-wishlist:hover { border-color: var(--danger); color: var(--danger); }
 .btn-wishlist.active { background: var(--danger); color: var(--white); border-color: var(--danger); }
 
+
+/* === SHARE BUTTON === */
+.share-wrap { position: relative; display: inline-block; }
+.share-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  min-width: 200px;
+  z-index: 50;
+  overflow: hidden;
+}
+.share-menu.open { display: block; }
+.share-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: var(--gray-700);
+  transition: var(--transition);
+}
+.share-menu a:hover { background: var(--off-white); color: var(--navy); }
+.share-menu a .fa-whatsapp { color: var(--success); }
+
 /* === RESPONSIVE ADDITIONS === */
 @media (max-width: 1024px) {
   .product-details-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -2446,6 +2475,147 @@ input, textarea, select { font-family: inherit; }
     <div class="container">
       <div id="profileContent">
         <!-- Filled by JS -->
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PAGE: RETURN POLICY -->
+<div id="page-returns" class="page" style="display:none;">
+  <div class="page-header">
+    <h1>Return & Refund Policy</h1>
+    <p>Our commitment to your satisfaction</p>
+    <div class="breadcrumb"><a href="#home">Home</a> <span>/</span> <span>Return Policy</span></div>
+  </div>
+  <section class="about-page">
+    <div class="container" style="max-width:800px;">
+      <div class="reveal" style="color:var(--gray-700);line-height:1.9;">
+        <h2 style="font-family:var(--font-display);color:var(--navy);font-size:1.6rem;margin-bottom:16px;">7-Day Replace / Refund Window</h2>
+        <p style="margin-bottom:20px;">We want you to be completely happy with your purchase. If something isn't right, you can request a <strong>replacement or refund within 7 days</strong> of your order being marked "Delivered."</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin:28px 0 12px;">How to Request a Return</h3>
+        <p style="margin-bottom:12px;">1. Go to <strong>My Orders</strong> on your account and find the delivered order.</p>
+        <p style="margin-bottom:12px;">2. Click <strong>"Request Replace / Refund"</strong> and choose whether you'd like a replacement or a refund, and tell us the reason.</p>
+        <p style="margin-bottom:20px;">3. Our team will review your request and update you on its status (Approved, Rejected, or Completed) through the same order page.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin:28px 0 12px;">Conditions for Return</h3>
+        <ul style="padding-left:20px;margin-bottom:20px;">
+          <li style="margin-bottom:8px;">Requests must be raised within 7 days of delivery — requests after this window cannot be accepted.</li>
+          <li style="margin-bottom:8px;">Items must be unused, unwashed, and in their original condition with tags intact.</li>
+          <li style="margin-bottom:8px;">Please keep the product ready for pickup/exchange once your request is approved.</li>
+        </ul>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin:28px 0 12px;">Refunds</h3>
+        <p style="margin-bottom:20px;">Once a refund request is approved and the returned item is received in good condition, refunds are processed to your original payment method. For Cash on Delivery orders, refunds will be made via bank transfer or UPI — our team will contact you to arrange this.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin:28px 0 12px;">Need Help?</h3>
+        <p>Reach out to us on WhatsApp at <a href="#" onclick="openWhatsApp('918452803023'); return false;" style="color:var(--gold-dark);font-weight:600;">+91 84528 03023</a> or visit us at our Kalyan store, and we'll be happy to assist.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PAGE: SHIPPING POLICY -->
+<div id="page-shipping" class="page" style="display:none;">
+  <div class="page-header">
+    <h1>Shipping Policy</h1>
+    <p>How we get your order to you</p>
+    <div class="breadcrumb"><a href="#home">Home</a> <span>/</span> <span>Shipping Policy</span></div>
+  </div>
+  <section class="about-page">
+    <div class="container" style="max-width:800px;">
+      <div class="reveal" style="color:var(--gray-700);line-height:1.9;">
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Delivery Charges</h3>
+        <p style="margin-bottom:20px;">We're currently offering <strong>free delivery on all orders</strong> for a limited introductory period. Standard delivery charges will apply after this period — any applicable charge will always be clearly shown at checkout before you place your order.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Dispatch & Delivery Timeline</h3>
+        <p style="margin-bottom:12px;">Orders are usually <strong>dispatched within 48 hours</strong> of being placed.</p>
+        <p style="margin-bottom:20px;">Standard delivery within India takes <strong>7 to 8 business days</strong> from the dispatch date, depending on your location. Please note that Saturdays, Sundays, and public holidays are not considered working days for delivery timelines. You'll receive updates on your order status (Packed, Shipped, Out for Delivery, Delivered) in the "My Orders" section of your account, along with an email confirmation when you place your order.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Cash on Delivery (COD)</h3>
+        <p style="margin-bottom:20px;">Cash on Delivery is available for most locations. Please note a small additional charge may apply for COD orders — this will be shown at checkout before you confirm your order.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Order Tracking</h3>
+        <p style="margin-bottom:20px;">You can track your order's progress anytime by logging in and visiting "My Orders."</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Delayed Orders</h3>
+        <p style="margin-bottom:20px;">If your order hasn't been dispatched within the estimated timeframe, please reach out to us and our team will look into it right away.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Questions?</h3>
+        <p>Contact us on WhatsApp at <a href="#" onclick="openWhatsApp('918452803023'); return false;" style="color:var(--gold-dark);font-weight:600;">+91 84528 03023</a> or call <a href="tel:+918452803023" style="color:var(--gold-dark);font-weight:600;">+91 84528 03023</a> for any delivery-related questions.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PAGE: PRIVACY POLICY -->
+<div id="page-privacy" class="page" style="display:none;">
+  <div class="page-header">
+    <h1>Privacy Policy</h1>
+    <p>How we handle your information</p>
+    <div class="breadcrumb"><a href="#home">Home</a> <span>/</span> <span>Privacy Policy</span></div>
+  </div>
+  <section class="about-page">
+    <div class="container" style="max-width:800px;">
+      <div class="reveal" style="color:var(--gray-700);line-height:1.9;">
+        <p style="margin-bottom:20px;">Memon Cloth Store ("we," "us," "our") respects your privacy. This policy explains what information we collect and how we use it.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Information We Collect</h3>
+        <p style="margin-bottom:20px;">When you create an account or place an order, we collect your name, email address, phone number, and delivery address. If you sign in with Google, we receive your name and email from Google. Payment details are processed securely by Razorpay — we do not store your card or bank information.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">How We Use Your Information</h3>
+        <ul style="padding-left:20px;margin-bottom:20px;">
+          <li style="margin-bottom:8px;">To process and deliver your orders</li>
+          <li style="margin-bottom:8px;">To send order confirmations and delivery updates via email or WhatsApp</li>
+          <li style="margin-bottom:8px;">To respond to your inquiries and provide customer support</li>
+          <li style="margin-bottom:8px;">To improve our products and services</li>
+        </ul>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Information Sharing</h3>
+        <p style="margin-bottom:20px;">We do not sell or rent your personal information to third parties. We share order details only with delivery partners (to fulfill your order) and payment processors (to process payments) as necessary to complete your purchase.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Your Choices</h3>
+        <p style="margin-bottom:20px;">You can review and update your account information anytime from your Profile page. To request deletion of your account or data, please contact us using the details below.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Contact Us</h3>
+        <p>For any privacy-related questions, reach us on WhatsApp at <a href="#" onclick="openWhatsApp('918452803023'); return false;" style="color:var(--gold-dark);font-weight:600;">+91 84528 03023</a> or visit our store in Kalyan, Mumbai.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PAGE: TERMS & CONDITIONS -->
+<div id="page-terms" class="page" style="display:none;">
+  <div class="page-header">
+    <h1>Terms & Conditions</h1>
+    <p>Please read before using our website</p>
+    <div class="breadcrumb"><a href="#home">Home</a> <span>/</span> <span>Terms & Conditions</span></div>
+  </div>
+  <section class="about-page">
+    <div class="container" style="max-width:800px;">
+      <div class="reveal" style="color:var(--gray-700);line-height:1.9;">
+        <p style="margin-bottom:20px;">By using the Memon Cloth Store website and placing an order, you agree to the following terms.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Orders & Pricing</h3>
+        <p style="margin-bottom:20px;">All product prices are listed in Indian Rupees (₹) and are subject to change without prior notice. We reserve the right to refuse or cancel any order, including in cases of pricing errors, stock unavailability, or suspected fraudulent activity.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Product Information</h3>
+        <p style="margin-bottom:20px;">We make every effort to display product colors and details as accurately as possible. However, actual colors may vary slightly depending on your device's display settings.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Payments</h3>
+        <p style="margin-bottom:20px;">We accept payments via Razorpay (cards, UPI, net banking) and Cash on Delivery, where available. Online payments are processed securely; we do not have access to or store your full payment details.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Returns & Refunds</h3>
+        <p style="margin-bottom:20px;">Returns and refunds are governed by our <a href="#returns" style="color:var(--gold-dark);font-weight:600;">Return & Refund Policy</a>.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Account Responsibility</h3>
+        <p style="margin-bottom:20px;">You are responsible for maintaining the confidentiality of your account login details and for all activities under your account.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Governing Law</h3>
+        <p style="margin-bottom:20px;">These terms are governed by the laws of India, and any disputes shall be subject to the jurisdiction of courts in Mumbai, Maharashtra.</p>
+
+        <h3 style="font-family:var(--font-display);color:var(--navy);font-size:1.2rem;margin-bottom:12px;">Contact Us</h3>
+        <p>For any questions about these terms, contact us on WhatsApp at <a href="#" onclick="openWhatsApp('918452803023'); return false;" style="color:var(--gold-dark);font-weight:600;">+91 84528 03023</a>.</p>
       </div>
     </div>
   </section>
@@ -2953,10 +3123,20 @@ input, textarea, select { font-family: inherit; }
         </ul>
       </div>
       <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#returns">Return & Refund Policy</a></li>
+          <li><a href="#shipping">Shipping Policy</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div>
         <h4>Categories</h4>
         <ul>
           <li><a href="#products" data-cat="dress-material">Dress Material</a></li>
-          <li><a href="#products" data-cat="readymade">Readymade</a></li>
+          <li><a href="#products" data-cat="kreadymade">Kashmiri Readymade Suit</a></li>
+          <li><a href="#products" data-cat="lreadymade">Lucknowi Readymade Suit</a></li>
           <li><a href="#products" data-cat="kids-wear">Kids Wear</a></li>
           <li><a href="#products" data-cat="fabrics">Fabrics & Materials</a></li>
           <li><a href="#products" data-cat="new-arrivals">New Arrivals</a></li>
@@ -3941,6 +4121,57 @@ setInterval(() => {
 updateCartBadge();
 
 /* === WHATSAPP HELPER === */
+/* === PRODUCT SHARE === */
+function getProductShareUrl(productId) {
+  return window.location.origin + window.location.pathname + '#product/' + productId;
+}
+
+function handleShareClick(productId, productName, event) {
+  event.stopPropagation();
+  const url = getProductShareUrl(productId);
+  if (navigator.share) {
+    navigator.share({
+      title: productName,
+      text: `Check out ${productName} at Memon Cloth Store!`,
+      url: url
+    }).catch(() => {});
+  } else {
+    toggleShareMenu(productId);
+  }
+}
+
+function toggleShareMenu(productId) {
+  document.querySelectorAll('.share-menu').forEach(m => {
+    if (m.id !== 'shareMenu-' + productId) m.classList.remove('open');
+  });
+  const menu = document.getElementById('shareMenu-' + productId);
+  if (menu) menu.classList.toggle('open');
+}
+
+function shareOnWhatsApp(productId, productName) {
+  const url = getProductShareUrl(productId);
+  const msg = encodeURIComponent(`Check out ${productName} at Memon Cloth Store! ${url}`);
+  window.open('https://wa.me/?text=' + msg, '_blank');
+  document.querySelectorAll('.share-menu').forEach(m => m.classList.remove('open'));
+}
+
+function copyProductLink(productId) {
+  const url = getProductShareUrl(productId);
+  navigator.clipboard.writeText(url).then(() => {
+    showToast('Link copied to clipboard!');
+  }).catch(() => {
+    showToast('Could not copy link');
+  });
+  document.querySelectorAll('.share-menu').forEach(m => m.classList.remove('open'));
+}
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.share-wrap')) {
+    document.querySelectorAll('.share-menu').forEach(m => m.classList.remove('open'));
+  }
+});
+
+/* === WHATSAPP HELPER === */
 function getWhatsAppURL(phone, message = '') {
   const encodedMsg = encodeURIComponent(message).replace(/'/g, "%27");
   // Try web.whatsapp.com first (more reliable)
@@ -4472,6 +4703,19 @@ function renderProductDetails(productId) {
           <a href="#" onclick="openWhatsApp('${WHATSAPP_NUMBER}', 'Hi, I am interested in ${product.name.replace(/'/g, "")} (₹${product.price})'); return false;" class="btn btn-whatsapp">
             <i class="fab fa-whatsapp"></i> Inquire
           </a>
+          <div class="share-wrap">
+            <button class="btn btn-outline" onclick="handleShareClick('${product._id}', '${product.name.replace(/'/g, "")}', event)">
+              <i class="fas fa-share-alt"></i> Share
+            </button>
+            <div class="share-menu" id="shareMenu-${product._id}">
+              <a href="#" onclick="shareOnWhatsApp('${product._id}', '${product.name.replace(/'/g, "")}'); return false;">
+                <i class="fab fa-whatsapp"></i> Share on WhatsApp
+              </a>
+              <a href="#" onclick="copyProductLink('${product._id}'); return false;">
+                <i class="fas fa-link"></i> Copy Link
+              </a>
+            </div>
+          </div>
         </div>
         <div class="product-features">
           <h3>Product Features</h3>
