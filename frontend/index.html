@@ -4174,8 +4174,8 @@ document.addEventListener('click', (e) => {
 /* === WHATSAPP HELPER === */
 function getWhatsAppURL(phone, message = '') {
   const encodedMsg = encodeURIComponent(message).replace(/'/g, "%27");
-  // Try web.whatsapp.com first (more reliable)
-  return `https://web.whatsapp.com/send?phone=${phone}&text=${encodedMsg}`;
+  // wa.me auto-detects device: opens the WhatsApp app on mobile, WhatsApp Web on desktop
+  return `https://wa.me/${phone}?text=${encodedMsg}`;
 }
 
 function openWhatsApp(phone, message = '') {
