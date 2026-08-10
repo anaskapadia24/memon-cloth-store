@@ -494,7 +494,7 @@ input,textarea,select{font-family:inherit}
           <div class="image-upload-area" id="imageUploadArea">
             <i class="fas fa-cloud-upload-alt"></i>
             <p>Drag & drop images here or click to browse</p>
-            <small>Supports: JPG, PNG, WebP (Max 5MB each, up to 10 images)</small>
+            <small>Supports: JPG, PNG, WebP (Max 10MB each, up to 10 images)</small>
             <input type="file" id="pImageFile" accept="image/*" multiple>
           </div>
           <div class="multi-image-preview" id="multiImagePreview"></div>
@@ -1011,7 +1011,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const toProcess = Array.from(e.target.files).slice(0, remaining);
       toProcess.forEach(file => {
         if (!file.type.match('image.*')) return;
-        if (file.size > 5 * 1024 * 1024) {
+        if (file.size > 10 * 1024 * 1024) {
           showToast(`${file.name} exceeds 5MB`, 'error');
           return;
         }
