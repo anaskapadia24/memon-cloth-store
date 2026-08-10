@@ -1361,6 +1361,10 @@ function renderOrders() {
             ${TRACKING_STAGES.map(s => `<option value="${s}" ${o.status === s ? 'selected' : ''}>${TRACKING_LABELS[s]}</option>`).join('')}
           </select>
           <button class="btn btn-sm btn-outline" onclick="downloadInvoice('${o._id}')" title="Download Invoice"><i class="fas fa-file-pdf"></i></button>
+          ${o.shiprocket && o.shiprocket.awbCode
+            ? `<span class="btn btn-sm" style="background:rgba(37,211,102,0.1);color:var(--success);" title="AWB: ${o.shiprocket.awbCode} (${o.shiprocket.courierName})"><i class="fas fa-truck"></i> Shipped</span>`
+            : `<button class="btn btn-sm btn-outline" onclick="shipViaShiprocket('${o._id}')" title="Ship via Shiprocket"><i class="fas fa-truck"></i></button>`
+          }
           <button class="btn btn-sm btn-danger" onclick="deleteOrder('${o._id}')"><i class="fas fa-trash"></i></button>
         </div>
       </div>
@@ -1446,6 +1450,26 @@ async function downloadInvoice(id) {
     URL.revokeObjectURL(url);
   } catch (err) {
     showToast('Failed to download invoice', 'error');
+  }
+}
+
+async function shipViaShiprocket(id) {
+  if (!confirm('Ship this order via Shiprocket now? This will create a real shipment and assign a courier.')) return;
+  try {
+    const res = await fetch(API_BASE + '/orders/' + id + '/ship-shiprocket', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer admin-' + ADMIN_PASSWORD }
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed to ship via Shiprocket');
+
+    await loadAllData();
+    renderOrders();
+    showToast(data.shiprocket?.awbCode
+      ? `Shipped! AWB: ${data.shiprocket.awbCode}`
+      : 'Shipment created on Shiprocket');
+  } catch (err) {
+    showToast(err.message || 'Failed to ship via Shiprocket', 'error');
   }
 }
 

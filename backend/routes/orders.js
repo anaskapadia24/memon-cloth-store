@@ -4,6 +4,7 @@ const Product = require('../models/Product');
 const { auth, adminAuth } = require('../middleware/auth');
 const { sendOrderConfirmationEmail } = require('../utils/email');
 const PDFDocument = require('pdfkit');
+const shiprocket = require('../utils/shiprocket');
 const router = express.Router();
 
 // Create order (customer)
@@ -276,6 +277,104 @@ router.get('/:id/invoice', adminAuth, async (req, res) => {
 
     doc.end();
   } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Ship order via Shiprocket (admin) - creates shipment, assigns AWB, gets label
+router.post('/:id/ship-shiprocket', adminAuth, async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id);
+    if (!order) {
+      return res.status(404).json({ error: 'Order not found' });
+    }
+    if (order.shiprocket && order.shiprocket.awbCode) {
+      return res.status(400).json({ error: 'This order has already been shipped via Shiprocket' });
+    }
+
+    const shipmentData = await shiprocket.createShipment(order);
+
+    if (!shipmentData.shipment_id) {
+      return res.status(500).json({ error: shipmentData.message || 'Failed to create Shiprocket shipment' });
+    }
+
+    order.shiprocket.orderId = String(shipmentData.order_id || '');
+    order.shiprocket.shipmentId = String(shipmentData.shipment_id);
+    order.shiprocket.status = 'shipment_created';
+    await order.save();
+
+    const awbData = await shiprocket.assignAWB(shipmentData.shipment_id);
+
+    if (awbData.response && awbData.response.data) {
+      order.shiprocket.awbCode = awbData.response.data.awb_code || '';
+      order.shiprocket.courierName = awbData.response.data.courier_name || '';
+      order.shiprocket.status = 'awb_assigned';
+    }
+
+    order.status = 'packed';
+    order.tracking.push({
+      status: 'packed',
+      notes: order.shiprocket.awbCode
+        ? `Shipped via Shiprocket - AWB: ${order.shiprocket.awbCode} (${order.shiprocket.courierName})`
+        : 'Shipment created on Shiprocket'
+    });
+
+    await order.save();
+
+    try {
+      const labelData = await shiprocket.generateLabel(shipmentData.shipment_id);
+      if (labelData.label_url) {
+        order.shiprocket.labelUrl = labelData.label_url;
+        await order.save();
+      }
+    } catch (labelErr) {
+      console.error('Label generation error (non-fatal):', labelErr.message);
+    }
+
+    res.json(order);
+  } catch (err) {
+    console.error('Shiprocket shipping error:', err.response?.data || err.message);
+    res.status(500).json({ error: err.response?.data?.message || err.message });
+  }
+});
+
+// Shiprocket webhook - receives automatic tracking updates
+router.post('/shiprocket-webhook', async (req, res) => {
+  try {
+    const { awb, current_status, order_id } = req.body;
+
+    if (!awb) {
+      return res.status(400).json({ error: 'Missing AWB in webhook payload' });
+    }
+
+    const order = await Order.findOne({ 'shiprocket.awbCode': awb });
+    if (!order) {
+      return res.status(200).json({ message: 'Order not found for this AWB, ignoring' });
+    }
+
+    const statusMap = {
+      'PICKED UP': 'shipped',
+      'IN TRANSIT': 'shipped',
+      'OUT FOR DELIVERY': 'out_for_delivery',
+      'DELIVERED': 'delivered',
+      'CANCELLED': 'cancelled'
+    };
+
+    const mappedStatus = statusMap[String(current_status).toUpperCase()];
+
+    if (mappedStatus && mappedStatus !== order.status) {
+      order.status = mappedStatus;
+      order.tracking.push({
+        status: mappedStatus,
+        notes: `Shiprocket update: ${current_status}`
+      });
+      order.shiprocket.status = current_status;
+      await order.save();
+    }
+
+    res.status(200).json({ message: 'Webhook processed' });
+  } catch (err) {
+    console.error('Shiprocket webhook error:', err.message);
     res.status(500).json({ error: err.message });
   }
 });

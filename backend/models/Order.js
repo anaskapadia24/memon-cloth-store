@@ -39,6 +39,14 @@ const orderSchema = new mongoose.Schema({
     default: 'pending' 
   },
   tracking: [trackingSchema],
+  shiprocket: {
+    orderId: { type: String, default: '' },
+    shipmentId: { type: String, default: '' },
+    awbCode: { type: String, default: '' },
+    courierName: { type: String, default: '' },
+    labelUrl: { type: String, default: '' },
+    status: { type: String, default: '' }
+  },
   returnRequest: {
     requested: { type: Boolean, default: false },
     type: { type: String, enum: ['replace', 'refund', ''], default: '' },
