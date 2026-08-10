@@ -45,7 +45,8 @@ const orderSchema = new mongoose.Schema({
     awbCode: { type: String, default: '' },
     courierName: { type: String, default: '' },
     labelUrl: { type: String, default: '' },
-    status: { type: String, default: '' }
+    status: { type: String, default: '' },
+    estimatedDelivery: { type: String, default: '' }
   },
   returnRequest: {
     requested: { type: Boolean, default: false },

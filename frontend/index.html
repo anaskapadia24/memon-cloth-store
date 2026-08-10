@@ -5524,6 +5524,20 @@ async function renderMyOrders() {
             <div style="margin-top:12px;padding:12px;background:var(--off-white);border-radius:var(--radius);font-size:0.8rem;color:var(--gray-500);">
               ${tracking.map(t => `<span style="margin-right:16px;"><strong>${t.stage}</strong> — ${new Date(t.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span>`).join('')}
             </div>` : ''}
+            ${order.shiprocket && order.shiprocket.awbCode ? `
+            <div style="margin-top:12px;padding:16px;background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:var(--radius);">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+                <div>
+                  <div style="font-size:0.78rem;color:var(--gray-500);margin-bottom:2px;">Tracking Number</div>
+                  <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">${order.shiprocket.awbCode}</div>
+                  <div style="font-size:0.8rem;color:var(--gray-500);margin-top:2px;">via ${order.shiprocket.courierName || 'Courier'}</div>
+                  ${order.shiprocket.estimatedDelivery ? `<div style="font-size:0.8rem;color:var(--success);font-weight:600;margin-top:6px;"><i class="fas fa-calendar-check"></i> Estimated delivery: ${order.shiprocket.estimatedDelivery}</div>` : ''}
+                </div>
+                <a href="https://shiprocket.co/tracking/${order.shiprocket.awbCode}" target="_blank" class="btn btn-sm btn-primary">
+                  <i class="fas fa-map-marker-alt"></i> Track Package
+                </a>
+              </div>
+            </div>` : ''}
             
             <div style="border-top:1px solid var(--gray-200);padding-top:16px;margin-top:16px;">
               ${order.items.map(item => `

@@ -341,7 +341,7 @@ router.post('/:id/ship-shiprocket', adminAuth, async (req, res) => {
 // Shiprocket webhook - receives automatic tracking updates
 router.post('/courier-webhook', async (req, res) => {
   try {
-    const { awb, current_status, order_id } = req.body;
+    const { awb, current_status, order_id, etd } = req.body;
 
     if (!awb) {
       return res.status(400).json({ error: 'Missing AWB in webhook payload' });
@@ -369,6 +369,7 @@ router.post('/courier-webhook', async (req, res) => {
         notes: `Shiprocket update: ${current_status}`
       });
       order.shiprocket.status = current_status;
+      if (etd) order.shiprocket.estimatedDelivery = etd;
       await order.save();
     }
 
