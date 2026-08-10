@@ -339,7 +339,7 @@ router.post('/:id/ship-shiprocket', adminAuth, async (req, res) => {
 });
 
 // Shiprocket webhook - receives automatic tracking updates
-router.post('/shiprocket-webhook', async (req, res) => {
+router.post('/courier-webhook', async (req, res) => {
   try {
     const { awb, current_status, order_id } = req.body;
 
