@@ -57,7 +57,7 @@ router.post('/', adminAuth, upload.array('images', 10), async (req, res) => {
     let images = [];
 
     if (req.files && req.files.length > 0) {
-      images = req.files.map(f => `/uploads/${f.filename}`);
+      images = req.files.map(f => f.path);
       img = images[0]; // First image as main
     }
 
@@ -122,7 +122,7 @@ router.put('/:id', adminAuth, upload.array('images', 10), async (req, res) => {
 
     // Update images
     if (req.files && req.files.length > 0) {
-      product.images = req.files.map(f => `/uploads/${f.filename}`);
+      product.images = req.files.map(f => f.path);
       product.img = product.images[0];
     } else if (imageUrl) {
       product.img = imageUrl;
@@ -173,7 +173,7 @@ router.post('/:id/colors', adminAuth, upload.array('images', 10), async (req, re
 
     let images = [];
     if (req.files && req.files.length > 0) {
-      images = req.files.map(f => `/uploads/${f.filename}`);
+      images = req.files.map(f => f.path);
     }
 
     product.colors.push({
@@ -214,7 +214,7 @@ router.put('/:id/colors/:colorIndex', adminAuth, upload.array('images', 10), asy
     }
 
     if (req.files && req.files.length > 0) {
-      product.colors[colorIndex].images = req.files.map(f => `/uploads/${f.filename}`);
+      product.colors[colorIndex].images = req.files.map(f => f.path);
     }
 
     await product.save();
