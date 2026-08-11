@@ -80,4 +80,50 @@ async function generateLabel(shipmentId) {
   return res.data;
 }
 
-module.exports = { getToken, createShipment, assignAWB, generateLabel };
+async function createReturnShipment(order) {
+  const token = await getToken();
+
+  const orderItems = order.items.map(item => ({
+    name: item.name,
+    sku: item.id ? item.id.toString() : 'SKU-' + Date.now(),
+    units: item.qty,
+    selling_price: item.price
+  }));
+
+  const payload = {
+    order_id: 'RET-' + order._id.toString(),
+    order_date: new Date().toISOString().slice(0, 19).replace('T', ' '),
+    pickup_customer_name: order.customer.name,
+    pickup_last_name: '',
+    pickup_address: order.customer.address,
+    pickup_city: order.customer.city,
+    pickup_pincode: order.customer.pin,
+    pickup_state: order.customer.state,
+    pickup_country: 'India',
+    pickup_email: order.customer.email || 'noemail@memonclothstore.com',
+    pickup_phone: order.customer.phone,
+    shipping_customer_name: 'Memon Cloth Store',
+    shipping_address: 'Shop 1 & 2, Hussain Apt, Near National Urdu Primary School, Ghass Bazar Road',
+    shipping_city: 'Kalyan West',
+    shipping_country: 'India',
+    shipping_pincode: '421301',
+    shipping_state: 'Maharashtra',
+    shipping_email: 'memonclothstore1978@gmail.com',
+    shipping_phone: '8452803023',
+    order_items: orderItems,
+    payment_method: 'Prepaid',
+    sub_total: order.total,
+    length: 25,
+    breadth: 20,
+    height: 5,
+    weight: 0.5
+  };
+
+  const res = await axios.post(`${BASE_URL}/orders/create/return`, payload, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+
+  return res.data;
+}
+
+module.exports = { getToken, createShipment, assignAWB, generateLabel, createReturnShipment };

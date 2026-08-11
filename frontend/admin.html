@@ -1362,7 +1362,8 @@ function renderOrders() {
           </select>
           <button class="btn btn-sm btn-outline" onclick="downloadInvoice('${o._id}')" title="Download Invoice"><i class="fas fa-file-pdf"></i></button>
           ${o.shiprocket && o.shiprocket.awbCode
-            ? `<span class="btn btn-sm" style="background:rgba(37,211,102,0.1);color:var(--success);" title="AWB: ${o.shiprocket.awbCode} (${o.shiprocket.courierName})"><i class="fas fa-truck"></i> Shipped</span>`
+            ? `<span class="btn btn-sm" style="background:rgba(37,211,102,0.1);color:var(--success);" title="AWB: ${o.shiprocket.awbCode} (${o.shiprocket.courierName})"><i class="fas fa-truck"></i> Shipped</span>
+               ${o.shiprocket.labelUrl ? `<a href="${o.shiprocket.labelUrl}" target="_blank" class="btn btn-sm btn-outline" title="Download Shipping Label"><i class="fas fa-tag"></i> Label</a>` : ''}`
             : `<button class="btn btn-sm btn-outline" onclick="shipViaShiprocket('${o._id}')" title="Ship via Shiprocket"><i class="fas fa-truck"></i></button>`
           }
           <button class="btn btn-sm btn-danger" onclick="deleteOrder('${o._id}')"><i class="fas fa-trash"></i></button>
@@ -1404,6 +1405,7 @@ function renderOrders() {
             </select>
           </div>
           <div style="margin-top:6px;font-size:.82rem;color:var(--gray-500);">Reason: ${o.returnRequest.reason}</div>
+          ${o.returnRequest.returnAwbCode ? `<div style="margin-top:6px;font-size:.82rem;color:var(--success);"><i class="fas fa-truck"></i> Pickup booked — AWB: ${o.returnRequest.returnAwbCode} (${o.returnRequest.returnCourierName})</div>` : ''}
         </div>
       ` : ''}
     </div>

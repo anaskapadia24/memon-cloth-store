@@ -58,7 +58,10 @@ const orderSchema = new mongoose.Schema({
       default: 'none' 
     },
     requestedAt: { type: Date },
-    adminNotes: { type: String, default: '' }
+    adminNotes: { type: String, default: '' },
+    returnAwbCode: { type: String, default: '' },
+    returnCourierName: { type: String, default: '' },
+    returnShipmentId: { type: String, default: '' }
   },
   createdAt: { type: Date, default: Date.now }
 });

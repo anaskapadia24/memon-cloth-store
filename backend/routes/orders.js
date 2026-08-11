@@ -187,6 +187,23 @@ router.put('/:id/return-status', adminAuth, async (req, res) => {
       order.returnRequest.adminNotes = adminNotes;
     }
 
+    // Auto-book reverse pickup with Shiprocket when approved
+    if (status === 'approved' && !order.returnRequest.returnAwbCode) {
+      try {
+        const returnData = await shiprocket.createReturnShipment(order);
+        if (returnData.shipment_id) {
+          order.returnRequest.returnShipmentId = String(returnData.shipment_id);
+          const awbData = await shiprocket.assignAWB(returnData.shipment_id);
+          if (awbData.response && awbData.response.data) {
+            order.returnRequest.returnAwbCode = awbData.response.data.awb_code || '';
+            order.returnRequest.returnCourierName = awbData.response.data.courier_name || '';
+          }
+        }
+      } catch (pickupErr) {
+        console.error('Reverse pickup booking error (non-fatal):', pickupErr.response?.data || pickupErr.message);
+      }
+    }
+
     await order.save();
     res.json(order);
   } catch (err) {
