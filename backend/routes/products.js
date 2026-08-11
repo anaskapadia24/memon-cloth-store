@@ -161,7 +161,7 @@ router.delete('/:id', adminAuth, async (req, res) => {
 // Add a color variant to a product (admin) - own photos + own size/stock
 router.post('/:id/colors', adminAuth, upload.array('images', 10), async (req, res) => {
   try {
-    const { name, sizes } = req.body;
+    const { name, sizes, stock } = req.body;
 
     if (!name || !name.trim()) {
       return res.status(400).json({ error: 'Color name is required' });
@@ -189,6 +189,7 @@ router.post('/:id/colors', adminAuth, upload.array('images', 10), async (req, re
     product.colors.push({
       name: name.trim(),
       images,
+      stock: Number(stock) || 0,
       sizes: parsedSizes
     });
 
@@ -202,7 +203,7 @@ router.post('/:id/colors', adminAuth, upload.array('images', 10), async (req, re
 // Update a color variant (admin) - by its position in the colors array
 router.put('/:id/colors/:colorIndex', adminAuth, upload.array('images', 10), async (req, res) => {
   try {
-    const { name, sizes } = req.body;
+    const { name, sizes, stock } = req.body;
     const colorIndex = parseInt(req.params.colorIndex);
 
     const product = await Product.findById(req.params.id);
@@ -214,6 +215,7 @@ router.put('/:id/colors/:colorIndex', adminAuth, upload.array('images', 10), asy
     }
 
     if (name) product.colors[colorIndex].name = name.trim();
+    if (stock !== undefined) product.colors[colorIndex].stock = Number(stock) || 0;
 
     if (sizes !== undefined) {
       try {

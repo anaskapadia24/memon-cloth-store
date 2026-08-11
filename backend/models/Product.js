@@ -23,6 +23,7 @@ const sizeSchema = new mongoose.Schema({
 const colorSchema = new mongoose.Schema({
   name: { type: String, required: true, trim: true },
   images: [{ type: String }],
+  stock: { type: Number, default: 0, min: 0 },
   sizes: [sizeSchema]
 }, { _id: false });
 

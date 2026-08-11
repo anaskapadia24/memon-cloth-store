@@ -623,7 +623,11 @@ input,textarea,select{font-family:inherit}
           <div class="multi-image-preview" id="colorImagePreview"></div>
         </div>
         <div class="form-group">
-          <label>Size-wise Stock for this Color</label>
+          <label>Total Stock Quantity (used only if you leave Size-wise Stock all at 0 — e.g. for unstitched items where you just track overall pieces, not per-size)</label>
+          <input type="number" id="colorStock" min="0" value="0" placeholder="e.g. 10">
+        </div>
+        <div class="form-group">
+          <label>Size-wise Stock for this Color (optional — leave at 0 if using Total Stock above)</label>
           <div class="size-grid" id="colorSizeGrid">
             <div class="size-item"><label>S</label><input type="number" id="colorSizeS" min="0" value="0" data-size="S"></div>
             <div class="size-item"><label>M</label><input type="number" id="colorSizeM" min="0" value="0" data-size="M"></div>
@@ -1001,6 +1005,7 @@ function openColorModal(index = null) {
   document.getElementById('colorModal').classList.add('open');
   document.getElementById('colorForm').reset();
   document.getElementById('colorIndex').value = '';
+  document.getElementById('colorStock').value = 0;
   uploadedColorImages = [];
   document.getElementById('colorImagePreview').innerHTML = '';
   document.querySelectorAll('#colorSizeGrid input').forEach(inp => inp.value = 0);
@@ -1011,6 +1016,7 @@ function openColorModal(index = null) {
     document.getElementById('colorModalTitle').textContent = 'Edit Color';
     document.getElementById('colorIndex').value = index;
     document.getElementById('colorName').value = c.name;
+    document.getElementById('colorStock').value = c.stock || 0;
     if (c.sizes && Array.isArray(c.sizes)) {
       c.sizes.forEach(s => {
         const inp = document.querySelector(`#colorSizeGrid input[data-size="${s.size}"]`);
@@ -1081,6 +1087,7 @@ async function saveColorVariant() {
   const formData = new FormData();
   formData.append('name', name);
   formData.append('sizes', JSON.stringify(sizes));
+  formData.append('stock', document.getElementById('colorStock').value);
 
   uploadedColorImages.forEach((imgData, i) => {
     if (imgData.startsWith('data:image')) {

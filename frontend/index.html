@@ -3385,11 +3385,14 @@ function productCard(p) {
     </div>`;
 }
 
+function getColorEffectiveStock(c) {
+  const sizeSum = (c.sizes || []).reduce((s, sz) => s + (sz.stock || 0), 0);
+  return sizeSum > 0 ? sizeSum : (c.stock || 0);
+}
+
 function isOutOfStock(p) {
   if (p.colors && p.colors.length > 0) {
-    const totalColorStock = p.colors.reduce((sum, c) => {
-      return sum + (c.sizes || []).reduce((s, sz) => s + (sz.stock || 0), 0);
-    }, 0);
+    const totalColorStock = p.colors.reduce((sum, c) => sum + getColorEffectiveStock(c), 0);
     return totalColorStock === 0;
   }
   return p.stock === 0;
@@ -4869,7 +4872,16 @@ function changeColorVariant(index) {
 
   const sizeContainer = document.querySelector('.size-selector .size-options');
   if (sizeContainer && variant.sizes) {
+    const sizeSum = variant.sizes.reduce((s, sz) => s + (sz.stock || 0), 0);
+    const usingFallbackStock = sizeSum === 0 && (variant.stock || 0) > 0;
+
     sizeContainer.innerHTML = variant.sizes.map(s => {
+      if (usingFallbackStock) {
+        return `<button class="size-btn" onclick="selectSize('${s.size}', this)" data-size="${s.size}">
+          ${s.size}
+          <span class="stock-dot in-stock"></span>
+        </button>`;
+      }
       const stockClass = s.stock === 0 ? 'out-of-stock' : '';
       const dotClass = s.stock === 0 ? 'no-stock' : s.stock <= 5 ? 'low-stock' : 'in-stock';
       return `<button class="size-btn ${stockClass}" onclick="selectSize('${s.size}', this)" data-size="${s.size}" ${s.stock === 0 ? 'disabled' : ''}>
