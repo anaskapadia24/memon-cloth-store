@@ -113,7 +113,7 @@ router.put('/:id', adminAuth, upload.array('images', 10), async (req, res) => {
     product.price = price !== undefined ? price : product.price;
     product.originalPrice = originalPrice !== undefined ? originalPrice : product.originalPrice;
     product.desc = desc !== undefined ? desc : product.desc;
-    pproduct.badge = badge !== undefined ? badge : product.badge;
+    product.badge = badge !== undefined ? badge : product.badge;
     product.color = color !== undefined ? color : product.color;
     product.fabric = fabric !== undefined ? fabric : product.fabric;
     product.size = size !== undefined ? size : product.size;
