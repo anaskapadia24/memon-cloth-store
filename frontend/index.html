@@ -4696,6 +4696,18 @@ function renderProductDetails(productId) {
         
         <div class="product-desc-full">${product.desc}</div>
 
+        ${(product.color || product.fabric || product.size || product.setInclude || product.work) ? `
+        <div class="product-features" style="margin-bottom:24px;">
+          <h3>Product Details</h3>
+          <ul>
+            ${product.color ? `<li><i class="fas fa-check-circle"></i> <strong>Color:</strong>&nbsp;${product.color}</li>` : ''}
+            ${product.fabric ? `<li><i class="fas fa-check-circle"></i> <strong>Fabric:</strong>&nbsp;${product.fabric}</li>` : ''}
+            ${product.size ? `<li><i class="fas fa-check-circle"></i> <strong>Size:</strong>&nbsp;${product.size}</li>` : ''}
+            ${product.setInclude ? `<li><i class="fas fa-check-circle"></i> <strong>Set Includes:</strong>&nbsp;${product.setInclude}</li>` : ''}
+            ${product.work ? `<li><i class="fas fa-check-circle"></i> <strong>Work:</strong>&nbsp;${product.work}</li>` : ''}
+          </ul>
+        </div>` : ''}
+
         ${product.colors && product.colors.length > 0 ? `
 <div class="color-selector">
     <h4><i class="fas fa-palette"></i> Available Colors</h4>

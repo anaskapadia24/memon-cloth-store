@@ -51,7 +51,7 @@ router.get('/:id', async (req, res) => {
 // Create product (admin) - with sizes and multiple images
 router.post('/', adminAuth, upload.array('images', 10), async (req, res) => {
   try {
-    const { name, cat, price, originalPrice, desc, badge, imageUrl, stock, sizes, sku } = req.body;
+    const { name, cat, price, originalPrice, desc, badge, imageUrl, stock, sizes, sku, color, fabric, size, setInclude, work } = req.body;
 
     let img = imageUrl || 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80';
     let images = [];
@@ -81,6 +81,11 @@ router.post('/', adminAuth, upload.array('images', 10), async (req, res) => {
       img,
       images,
       badge,
+      color: color || '',
+      fabric: fabric || '',
+      size: size || '',
+      setInclude: setInclude || '',
+      work: work || '',
       stock: stock || 0,
       sizes: parsedSizes
     });
@@ -95,7 +100,7 @@ router.post('/', adminAuth, upload.array('images', 10), async (req, res) => {
 // Update product (admin) - with sizes and multiple images
 router.put('/:id', adminAuth, upload.array('images', 10), async (req, res) => {
   try {
-    const { name, cat, price, originalPrice, desc, badge, imageUrl, stock, sizes, sku } = req.body;
+    const { name, cat, price, originalPrice, desc, badge, imageUrl, stock, sizes, sku, color, fabric, size, setInclude, work } = req.body;
     const product = await Product.findById(req.params.id);
 
     if (!product) {
@@ -108,7 +113,12 @@ router.put('/:id', adminAuth, upload.array('images', 10), async (req, res) => {
     product.price = price !== undefined ? price : product.price;
     product.originalPrice = originalPrice !== undefined ? originalPrice : product.originalPrice;
     product.desc = desc !== undefined ? desc : product.desc;
-    product.badge = badge !== undefined ? badge : product.badge;
+    pproduct.badge = badge !== undefined ? badge : product.badge;
+    product.color = color !== undefined ? color : product.color;
+    product.fabric = fabric !== undefined ? fabric : product.fabric;
+    product.size = size !== undefined ? size : product.size;
+    product.setInclude = setInclude !== undefined ? setInclude : product.setInclude;
+    product.work = work !== undefined ? work : product.work;
     product.stock = stock !== undefined ? stock : product.stock;
 
     // Update sizes

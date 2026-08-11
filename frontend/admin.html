@@ -534,6 +534,30 @@ input,textarea,select{font-family:inherit}
           <label>Badge (Optional)</label>
           <input type="text" id="pBadge" placeholder="e.g. New, Bestseller, Premium">
         </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Color</label>
+            <input type="text" id="pColor" placeholder="e.g. Black & Red">
+          </div>
+          <div class="form-group">
+            <label>Fabric</label>
+            <input type="text" id="pFabric" placeholder="e.g. Georgette">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Size</label>
+            <input type="text" id="pSize" placeholder="e.g. Free Size, M to XXL">
+          </div>
+          <div class="form-group">
+            <label>Work</label>
+            <input type="text" id="pWork" placeholder="e.g. Embroidery Work">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Set Includes</label>
+          <input type="text" id="pSetInclude" placeholder="e.g. Kurta, Bottom, Dupatta">
+        </div>
       </form>
     </div>
     <div class="modal-footer">
@@ -902,6 +926,11 @@ function openProductModal(id = null) {
     document.getElementById('pStock').value = p.stock ?? 0;
     document.getElementById('pDesc').value = p.desc;
     document.getElementById('pBadge').value = p.badge || '';
+    document.getElementById('pColor').value = p.color || '';
+    document.getElementById('pFabric').value = p.fabric || '';
+    document.getElementById('pSize').value = p.size || '';
+    document.getElementById('pSetInclude').value = p.setInclude || '';
+    document.getElementById('pWork').value = p.work || '';
 
     document.getElementById('colorVariantsSection').style.display = 'block';
     document.getElementById('colorVariantsHint').style.display = 'none';
@@ -1208,6 +1237,11 @@ async function saveProduct() {
   formData.append('sizes', JSON.stringify(sizes));
   formData.append('desc', document.getElementById('pDesc').value);
   formData.append('badge', document.getElementById('pBadge').value);
+  formData.append('color', document.getElementById('pColor').value);
+  formData.append('fabric', document.getElementById('pFabric').value);
+  formData.append('size', document.getElementById('pSize').value);
+  formData.append('setInclude', document.getElementById('pSetInclude').value);
+  formData.append('work', document.getElementById('pWork').value);
   
   const urlVal = document.getElementById('pImage').value;
   if (urlVal) {
