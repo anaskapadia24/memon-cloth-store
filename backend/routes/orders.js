@@ -397,4 +397,51 @@ router.post('/courier-webhook', async (req, res) => {
   }
 });
 
+// Cancel order (customer) - only allowed before it's shipped
+router.put('/:id/cancel', auth, async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id);
+    if (!order) {
+      return res.status(404).json({ error: 'Order not found' });
+    }
+    if (order.userId.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ error: 'Not authorized for this order' });
+    }
+    if (!['pending', 'packed'].includes(order.status)) {
+      return res.status(400).json({ error: 'This order can no longer be cancelled — it has already been shipped. Please contact us for help.' });
+    }
+
+    order.status = 'cancelled';
+    order.tracking.push({ status: 'cancelled', notes: 'Cancelled by customer' });
+
+    // Restore stock for each item
+    for (const item of order.items) {
+      if (item.id) {
+        const product = await Product.findById(item.id);
+        if (product) {
+          if (item.color && product.colors && product.colors.length > 0) {
+            const colorObj = product.colors.find(c => c.name === item.color);
+            if (colorObj) {
+              const sizeObj = colorObj.sizes.find(s => s.size === item.size);
+              if (sizeObj) sizeObj.stock += item.qty;
+              else colorObj.stock = (colorObj.stock || 0) + item.qty;
+            }
+          } else if (item.size) {
+            const sizeObj = product.sizes.find(s => s.size === item.size);
+            if (sizeObj) sizeObj.stock += item.qty;
+          } else {
+            product.stock += item.qty;
+          }
+          await product.save();
+        }
+      }
+    }
+
+    await order.save();
+    res.json(order);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;

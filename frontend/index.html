@@ -5425,6 +5425,26 @@ function closeSizeChart() {
   document.getElementById('sizeChartModal').classList.remove('open');
 }
 // Render My Orders page
+async function cancelOrder(orderId) {
+  if (!confirm('Are you sure you want to cancel this order?')) return;
+  const token = localStorage.getItem('memon_token');
+  try {
+    const res = await fetch(API_BASE + '/orders/' + orderId + '/cancel', {
+      method: 'PUT',
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      showToast(data.error || 'Failed to cancel order');
+      return;
+    }
+    showToast('Order cancelled');
+    renderMyOrders();
+  } catch (err) {
+    showToast('Network error. Please try again.');
+  }
+}
+
 function openReturnModal(orderId) {
   document.getElementById('returnOrderId').value = orderId;
   document.getElementById('returnForm').reset();
@@ -5576,6 +5596,13 @@ async function renderMyOrders() {
               <strong style="font-family:var(--font-display);font-size:1.4rem;color:var(--navy);">₹${order.total}</strong>
             </div>
             ${order.notes ? `<div style="margin-top:12px;padding:12px;background:var(--off-white);border-radius:var(--radius);font-size:0.85rem;color:var(--gray-700);"><strong>Notes:</strong> ${order.notes}</div>` : ''}
+            ${['pending', 'packed'].includes(order.status) ? `
+              <div style="margin-top:12px;">
+                <button class="btn btn-outline btn-sm" style="color:var(--danger);border-color:var(--danger);" onclick="cancelOrder('${order._id}')">
+                  <i class="fas fa-times-circle"></i> Cancel Order
+                </button>
+              </div>
+            ` : ''}
             ${(() => {
               const rr = order.returnRequest;
               const daysSince = (Date.now() - new Date(order.createdAt).getTime()) / (1000*60*60*24);
