@@ -1,0 +1,3793 @@
+{
+  "exportedAt": "2026-08-13T20:43:25.446Z",
+  "source": "mongodb+srv://***@memon-cloth-store.zvpvzzj.mongodb.net",
+  "products": [
+    {
+      "_id": "6a746344d80d2f6e797241c2",
+      "sku": "905094",
+      "name": "Kashmiri Elegant Sage Green  3-Piece Suit Set with Dupatta",
+      "cat": "kashmiri-suit",
+      "price": 1500,
+      "desc": "Elevate your ethnic wardrobe with this elegant sage green 3-piece suit set, beautifully adorned with intricate floral embroidery. The straight-cut kurta features detailed embroidery on the neckline, front panel, hemline, and sleeves, creating a graceful and sophisticated look. Paired with matching wide-leg trousers and a coordinated embroidered dupatta, this ensemble is perfect for festive occasions, family gatherings, and celebrations.",
+      "img": "/uploads/1786012484562-698281094.png",
+      "images": [
+        "/uploads/1786012484562-698281094.png"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 1
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-06T10:34:44.624Z",
+      "__v": 2,
+      "originalPrice": 0
+    },
+    {
+      "_id": "6a7465b1d80d2f6e797242f1",
+      "sku": "905582",
+      "name": "Kashmiri Elegant Ivory White Floral Embroidered 3-Piece Suit Set with Dupatta",
+      "cat": "kashmiri-suit",
+      "price": 1400,
+      "desc": "Elevate your ethnic wardrobe with this elegant ivory white 3-piece suit set featuring beautiful red floral embroidery. The straight-fit kurta is designed with a round embroidered neckline and three-quarter sleeves, paired with matching embroidered palazzo pants and a coordinated dupatta. Perfect for festive occasions, family gatherings, and traditional celebrations.\r\n",
+      "img": "/uploads/1786013522444-876203906.png",
+      "images": [
+        "/uploads/1786013522444-876203906.png",
+        "/uploads/1786013522490-250996264.jpeg"
+      ],
+      "badge": "",
+      "stock": 3,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 1
+        },
+        {
+          "size": "3XL",
+          "stock": 1
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-06T10:45:05.706Z",
+      "__v": 4,
+      "originalPrice": 0
+    },
+    {
+      "_id": "6a74686fd80d2f6e79724451",
+      "sku": "905215",
+      "name": "Kashmiri Elegant Plum Purple Floral Embroidered 3-Piece Suit",
+      "cat": "kashmiri-suit",
+      "price": 1350,
+      "desc": "Add a touch of elegance to your ethnic wardrobe with this stunning plum purple 3-piece suit set featuring vibrant floral embroidery. The straight-fit kurta is designed with an embroidered round neckline and full sleeves, paired with matching wide-leg palazzo pants and a coordinated embroidered dupatta. Perfect for festive occasions, family gatherings, and traditional celebrations.",
+      "img": "/uploads/1786013807639-16171889.png",
+      "images": [
+        "/uploads/1786013807639-16171889.png",
+        "/uploads/1786013807672-128493237.jpeg"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 1
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-06T10:56:47.731Z",
+      "__v": 2,
+      "originalPrice": 0
+    },
+    {
+      "_id": "6a746a8ad80d2f6e79724540",
+      "sku": "904932",
+      "name": "Lucknowi Coffee Brown Floral Embroidered 3-Piece Suit",
+      "cat": "lucknowi-suit",
+      "price": 1300,
+      "desc": "Enhance your ethnic collection with this elegant coffee brown 3-piece suit set featuring delicate white floral embroidery. The straight-fit kurta is designed with a round neckline and three-quarter sleeves, paired with matching wide-leg palazzo pants and a coordinated embroidered dupatta with lace detailing. Perfect for festive occasions, family gatherings, and traditional celebrations.",
+      "img": "/uploads/1786014346245-54309268.png",
+      "images": [
+        "/uploads/1786014346245-54309268.png"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-06T11:05:46.367Z",
+      "__v": 1,
+      "originalPrice": 0
+    },
+    {
+      "_id": "6a746c55d80d2f6e797245ae",
+      "sku": "904757",
+      "name": "Lucknowi Elegant Magenta Floral Printed & Embroidered 3-Piece Suit Set",
+      "cat": "lucknowi-suit",
+      "price": 1500,
+      "desc": "Refresh your ethnic wardrobe with this elegant magenta 3-piece suit set featuring a beautiful floral print and intricate white embroidery. The straight-fit kurta is designed with a round neckline and three-quarter sleeves, paired with matching wide-leg palazzo pants and a coordinated printed dupatta. Perfect for festive occasions, family gatherings, and traditional celebrations.",
+      "img": "/uploads/1786014805576-242834219.png",
+      "images": [
+        "/uploads/1786014805576-242834219.png"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-06T11:13:25.647Z",
+      "__v": 3,
+      "originalPrice": 0
+    },
+    {
+      "_id": "6a74a6fcd80d2f6e79724819",
+      "sku": "",
+      "name": "Saiyaara Black & Red Georgette 3-Piece Suit Set with Dupatta",
+      "cat": "kashmiri-suit",
+      "price": 1300,
+      "desc": "Make a bold statement with this elegant black 3-piece suit set featuring striking red embroidery. The straight-fit kurta is designed with an embroidered neckline and full sleeves, paired with matching embroidered wide-leg palazzo pants and a sheer embroidered dupatta. Perfect for festive occasions, evening events, family gatherings, and traditional celebrations.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335730/memon-cloth-store/mlx1wdsh0ol2qcxvxbge.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335730/memon-cloth-store/mlx1wdsh0ol2qcxvxbge.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335732/memon-cloth-store/jh6n4d1ppw9tttv3orcg.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335732/memon-cloth-store/tlmycrzmfoakqs0hic7f.png"
+      ],
+      "badge": "Bestseller",
+      "stock": 23,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 4
+        },
+        {
+          "size": "L",
+          "stock": 5
+        },
+        {
+          "size": "XL",
+          "stock": 4
+        },
+        {
+          "size": "XXL",
+          "stock": 5
+        },
+        {
+          "size": "3XL",
+          "stock": 3
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Black and white",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335724/memon-cloth-store/hmnjleubdcunzr0qmex2.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 4
+            },
+            {
+              "size": "XXL",
+              "stock": 4
+            },
+            {
+              "size": "3XL",
+              "stock": 2
+            },
+            {
+              "size": "4XL",
+              "stock": 2
+            },
+            {
+              "size": "5XL",
+              "stock": 2
+            }
+          ]
+        },
+        {
+          "name": "Black and Red",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786430633/memon-cloth-store/c7hqkcqu6bqwaxhuxo5h.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 5
+            },
+            {
+              "size": "L",
+              "stock": 5
+            },
+            {
+              "size": "XL",
+              "stock": 5
+            },
+            {
+              "size": "XXL",
+              "stock": 5
+            },
+            {
+              "size": "3XL",
+              "stock": 5
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-06T15:23:40.310Z",
+      "__v": 6,
+      "originalPrice": 0,
+      "color": "",
+      "fabric": "",
+      "setInclude": "",
+      "size": "",
+      "work": ""
+    },
+    {
+      "_id": "6a75cce28f46b47dab058b82",
+      "sku": "905491",
+      "name": "Lucknowi Black kurti with blue floral, thread embroidery work",
+      "cat": "lucknowi-suit",
+      "price": 1200,
+      "originalPrice": 0,
+      "desc": "",
+      "img": "/uploads/1786105217216-431224893.png",
+      "images": [
+        "/uploads/1786105217216-431224893.png"
+      ],
+      "badge": "",
+      "stock": 2,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 1
+        },
+        {
+          "size": "4XL",
+          "stock": 1
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Yellow",
+          "images": [
+            "/uploads/1786105202957-497869275.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 1
+            },
+            {
+              "size": "4XL",
+              "stock": 1
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-07T12:17:38.148Z",
+      "__v": 2
+    },
+    {
+      "_id": "6a761dda8f46b47dab058e14",
+      "sku": "",
+      "name": "Lucknowi White Embroidered 3- Piece suit",
+      "cat": "lucknowi-suit",
+      "price": 1200,
+      "originalPrice": 0,
+      "desc": "The White Embroidered Suit features an elegant all-white kurti adorned with delicate floral and paisley embroidery for a sophisticated and graceful look. The matching wide-leg bottom is enhanced with embroidered motifs and borders, while the white dupatta adds a refined finish with subtle embroidery and lace edging. Perfect for festive, formal, and semi-formal occasions.\r\n\r\nTop:- White kurti with delicate floral and paisley embroidery work, detailed neckline, sleeves and border\r\n\r\nBottom:- White wide-leg bottom with embroidered motifs and detailed \r\n\r\nDupatta:- White dupatta with delicate embroidered motifs and lace border",
+      "img": "/uploads/1786125785979-168532756.png",
+      "images": [
+        "/uploads/1786125785979-168532756.png"
+      ],
+      "badge": "",
+      "stock": 8,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 2
+        },
+        {
+          "size": "L",
+          "stock": 2
+        },
+        {
+          "size": "XL",
+          "stock": 2
+        },
+        {
+          "size": "XXL",
+          "stock": 2
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-07T18:03:06.036Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a761e438f46b47dab058e46",
+      "sku": "905217",
+      "name": "Kashmiri Maroon Embroidered Suit",
+      "cat": "kashmiri-suit",
+      "price": 1500,
+      "originalPrice": 0,
+      "desc": "The Maroon Embroidered Suit features a rich maroon kurti with intricate all-over floral embroidery and beautiful multicolour floral detailing. The wide-leg bottom and matching dupatta are finished with coordinated floral borders, creating an elegant and festive look suitable for traditional and semi-formal occasions.\r\n\r\nTop:- Maroon kurti with intricate floral embroidery, multicolour floral detailing and decorative border work\r\n\r\nBottom:- Maroon wide-leg bottom with floral embroidered border\r\n\r\nDupatta:- Maroon dupatta with floral motifs and embroidered border detailing",
+      "img": "/uploads/1786125891323-745665429.png",
+      "images": [
+        "/uploads/1786125891323-745665429.png",
+        "/uploads/1786125891361-759146016.png"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-07T18:04:51.412Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a761f288f46b47dab058eba",
+      "sku": "",
+      "name": "Saiyaara White and Red Georgette 3-Piece Suit",
+      "cat": "kashmiri-suit",
+      "price": 1300,
+      "originalPrice": 0,
+      "desc": "The White Embroidered 3-Piece Suit features a soft white fabric kurti beautifully adorned with intricate red thread embroidery. The detailed floral and paisley motifs on the neckline, sleeves, side panels, and hem create a traditional yet elegant look. Paired with matching embroidered wide-leg pants and a coordinating dupatta, this set offers a graceful and comfortable silhouette, making it suitable for festive gatherings, casual occasions, and semi-formal wear.\r\n\r\nTop:- White Georgette kurti with intricate red thread embroidery and floral/paisley detailing\r\n\r\nTop length:- 44 inches\r\n\r\nBottom:- White Georgette wide-leg pants with red embroidered motifs and detailed embroidered hem\r\n\r\nBottom length:- 40 inches\r\n\r\nDupatta:- White Georgette dupatta with red embroidered motifs, embroidered border and lace detailing\r\n\r\nDupatta:- 2.25 meters",
+      "img": "/uploads/1786126119949-32231981.jpeg",
+      "images": [
+        "/uploads/1786126119949-32231981.jpeg",
+        "/uploads/1786126119992-187932727.png",
+        "/uploads/1786126120029-336871437.jpeg"
+      ],
+      "badge": "Bestseller",
+      "stock": 8,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 2
+        },
+        {
+          "size": "3XL",
+          "stock": 2
+        },
+        {
+          "size": "4XL",
+          "stock": 2
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-07T18:08:40.085Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a76d2f2bd8863857d9799d9",
+      "sku": "905211",
+      "name": "Lucknowi Sky Blue Floral Embroidered Rayon 3-Piece Suit",
+      "cat": "lucknowi-suit",
+      "price": 1600,
+      "originalPrice": 0,
+      "desc": "The Sky Blue Floral Embroidered 3-Piece Suit features a soft rayon fabric kurti beautifully detailed with delicate floral embroidery and printed floral motifs. The elegant neckline is enhanced with intricate white lace and embroidered detailing, while the sleeves and hem feature coordinated floral borders for a refined finish. Paired with matching wide-leg pants and a lightweight cotton dupatta with floral embroidery and decorative lace borders, this ensemble offers a graceful and comfortable look for casual, festive, and semi-formal occasions.",
+      "img": "/uploads/1786172146862-675629626.png",
+      "images": [
+        "/uploads/1786172146862-675629626.png"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 1
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-08T06:55:46.938Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a76d46ebd8863857d979abe",
+      "sku": "904852",
+      "name": "Lucknowi Turquoise kurti with white floral embroidery",
+      "cat": "lucknowi-suit",
+      "price": 1300,
+      "originalPrice": 0,
+      "desc": "The Turquoise Embroidered Suit features a vibrant turquoise kurti with intricate white floral embroidery and elegant printed detailing. The matching wide-leg bottom complements the kurti with floral motifs and embroidered borders, while the white dupatta with delicate embroidery and lace edging adds a graceful contrast. This ensemble is perfect for festive and semi-formal occasions.",
+      "img": "/uploads/1786172526276-923357061.png",
+      "images": [
+        "/uploads/1786172526276-923357061.png"
+      ],
+      "badge": "",
+      "stock": 2,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 2
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-08T07:02:06.306Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7862b1b7f6b89caa9cc9cb",
+      "sku": "904730",
+      "name": "Pakistani Sage Grey  3-Piece Suit",
+      "cat": "readymade-dresses",
+      "price": 4250,
+      "originalPrice": 5000,
+      "desc": "Sage Grey 3-Piece Suit featuring a stylish kurti, matching palazzo pants, and dupatta. The kurti is adorned with intricate white floral embroidery, elegant paisley motifs, lace detailing, scalloped cuffs, and beautifully embroidered borders. The matching pants and dupatta complete the coordinated look, making this outfit perfect for festive occasions, gatherings, and elegant everyday wear.\r\n\r\nFabric: Organza",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335824/memon-cloth-store/ggykz7kru3slcwm7baj2.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335824/memon-cloth-store/ggykz7kru3slcwm7baj2.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335826/memon-cloth-store/zodykjsvrscqbxoaqmob.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335826/memon-cloth-store/mbbcqi5fhffvedwnajxz.jpg"
+      ],
+      "badge": "Premium",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Greyish Olive",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335816/memon-cloth-store/zsb58v5wqvab00yebzj9.png",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786335817/memon-cloth-store/jstoxmeq4t0vgf2mcgi9.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 1
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Silver Grey",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376521/memon-cloth-store/mvnvsorkqnt5dnwe3u4k.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 1
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-09T11:21:21.658Z",
+      "__v": 6
+    },
+    {
+      "_id": "6a78661bb7f6b89caa9cca8f",
+      "sku": "905098",
+      "name": "Pakistani Mauve Plum Shining Organza 3-Piece",
+      "cat": "readymade-dresses",
+      "price": 3000,
+      "originalPrice": 0,
+      "desc": "Pakistani Mauve Plum 3-Piece featuring a stylish short kurti and matching wide-leg pants. The kurti has elegant silver embroidery with floral motifs, detailed chevron patterns, an embellished neckline, decorative sleeve borders, and an ornate embroidered hem. The matching flowing pants add a graceful, luxurious touch, making this outfit perfect for festive occasions, parties, and special gatherings.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336007/memon-cloth-store/hmuqbrdjr4epycr1pbbi.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336007/memon-cloth-store/hmuqbrdjr4epycr1pbbi.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336009/memon-cloth-store/gtx521pe1bobhoalwf45.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336009/memon-cloth-store/yjmi5tak1g3hcmn2muul.jpg"
+      ],
+      "badge": "",
+      "stock": 3,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 3
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-09T11:35:55.826Z",
+      "__v": 5
+    },
+    {
+      "_id": "6a7874eba31520e700529a1c",
+      "sku": "905100",
+      "name": "Pakistani Jacket Style Cutwork 3 piece",
+      "cat": "readymade-dresses",
+      "price": 2400,
+      "originalPrice": 0,
+      "desc": "3-piece jacket-style set features a stylish olive green embroidered jacket paired with a matching inner and coordinating dupatta. The jacket showcases intricate floral embroidery, delicate cutwork detailing, decorative borders, and beautifully finished sleeves, giving the outfit a rich and sophisticated look. The matching inner complements the jacket perfectly, while the dupatta adds a graceful finishing touch, making this set ideal for festive occasions, parties, and special gatherings.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336184/memon-cloth-store/kcscztq6rwok57ah6v2r.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336184/memon-cloth-store/kcscztq6rwok57ah6v2r.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336184/memon-cloth-store/jzi5ktzwscwzytblomjk.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336185/memon-cloth-store/epmrv21pnfypehsossto.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336186/memon-cloth-store/wwzeyhpt6ljcg9fhmm8d.jpg"
+      ],
+      "badge": "",
+      "stock": 3,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 3
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Wine",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336159/memon-cloth-store/izopxzfsce4gwxeieyqt.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336161/memon-cloth-store/u558ns3beikmwhx4syfm.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336161/memon-cloth-store/e6lvavpeamcojvveiaoz.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 1
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Tomato",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336177/memon-cloth-store/bioj8x0pw1jaubtggihj.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336179/memon-cloth-store/z2notywkakbo0flx3l8v.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336179/memon-cloth-store/b0ux1qyt4vx0moivm001.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 1
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Mehendi Green",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376428/memon-cloth-store/bhyyda2i6tijux0hxetq.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376429/memon-cloth-store/gbahoc5l5la64curnfol.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 1
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-09T12:39:07.960Z",
+      "__v": 6
+    },
+    {
+      "_id": "6a787747a31520e700529ac2",
+      "sku": "905117",
+      "name": "Pakistani Cutwork 3 piece suit",
+      "cat": "readymade-dresses",
+      "price": 2800,
+      "originalPrice": 0,
+      "desc": "The elegant 3-piece Pakistani suit is crafted in premium Organza fabric, featuring a beautiful beige base with intricate black embroidery and delicate embellishments. The kurta showcases a statement embroidered neckline, detailed sleeve borders, and elegant paisley motifs, paired with matching trousers and a coordinating dupatta with black embroidered edging. A sophisticated and graceful choice for festive occasions, parties, and special gatherings.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336218/memon-cloth-store/hcp6gculnwbuicz5s9ci.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336218/memon-cloth-store/hcp6gculnwbuicz5s9ci.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336220/memon-cloth-store/k0jgaxtuyfuiedbqotne.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336220/memon-cloth-store/ti02almix3lyjbyxxudy.jpg"
+      ],
+      "badge": "",
+      "stock": 2,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-09T12:49:11.581Z",
+      "__v": 2,
+      "color": "Beige",
+      "fabric": "Organza",
+      "setInclude": "Kurta, Plazo and Dupatta",
+      "size": "",
+      "work": "Black Handwork"
+    },
+    {
+      "_id": "6a787943a31520e700529b4c",
+      "sku": "904665",
+      "name": "Premium organza Pakistani Style",
+      "cat": "readymade-dresses",
+      "price": 2400,
+      "originalPrice": 0,
+      "desc": "Pakistani-style three-piece suit is crafted in premium organza fabric, featuring a beautifully embroidered kurta with delicate floral detailing, an intricately finished neckline, and elegant lace work on the sleeves and hem. The set comes with a broad-bottom plazo for a comfortable and graceful look, paired with a matching dupatta with beautiful border detailing. Perfect for festive occasions, parties, and special gatherings, this outfit combines traditional Pakistani design with a sophisticated and stylish appeal.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336256/memon-cloth-store/kiu1stoos5bkvwgu9gg5.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336256/memon-cloth-store/kiu1stoos5bkvwgu9gg5.png"
+      ],
+      "badge": "",
+      "stock": 3,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 1
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-09T12:57:39.333Z",
+      "__v": 1
+    },
+    {
+      "_id": "6a787aa9a31520e700529bc2",
+      "sku": "905112",
+      "name": "Handwork Pakistani Suit",
+      "cat": "readymade-dresses",
+      "price": 1600,
+      "originalPrice": 0,
+      "desc": "This Pakistani-style 3-piece suit is made from premium Jimmy Choo fabric, featuring beautiful handwork embroidery on the neckline, sleeves, and hem. It comes with a stylish printed plazo with detailed border work and a lightweight chiffon dupatta with a delicate lace finish. Perfect for festive occasions, parties, and special gatherings, offering a graceful traditional Pakistani look with a modern touch.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336301/memon-cloth-store/etvoq4qfk5g7ahs5kazy.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336301/memon-cloth-store/etvoq4qfk5g7ahs5kazy.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336302/memon-cloth-store/kv37wxde3nmm519w0uh4.jpg"
+      ],
+      "badge": "",
+      "stock": 10,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 2
+        },
+        {
+          "size": "L",
+          "stock": 2
+        },
+        {
+          "size": "XL",
+          "stock": 2
+        },
+        {
+          "size": "XXL",
+          "stock": 2
+        },
+        {
+          "size": "3XL",
+          "stock": 2
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-09T13:03:37.321Z",
+      "__v": 1
+    },
+    {
+      "_id": "6a78816da31520e700529d62",
+      "sku": "905059",
+      "name": "Pakistani Rayon 3 piece suit",
+      "cat": "readymade-dresses",
+      "price": 1500,
+      "originalPrice": 1800,
+      "desc": "Beautiful Pakistani-style 4-colour collection is crafted in soft and comfortable Rayon fabric, featuring detailed Pakistani embroidery on the kurta with beautiful floral and traditional motifs. Each set is paired with a stylish printed dupatta, adding a graceful contrast to the outfit. The comfortable fit and detailed embroidery make this collection suitable for everyday wear, gatherings, festive occasions, and casual outings.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336360/memon-cloth-store/gfq2ozuznlhdjbbmq4nd.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336360/memon-cloth-store/gfq2ozuznlhdjbbmq4nd.png"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Pista Green",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336333/memon-cloth-store/ggdddkmt0qwd0ltbhouo.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 1
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Grey",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336344/memon-cloth-store/cvcscaak6feg0ogr5oa4.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 1
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Bluish green",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786336355/memon-cloth-store/ygwdcnykbdwvjua1p2dr.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 1
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Peach",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376389/memon-cloth-store/zjefinsh40fnovjmiz6l.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 1
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-09T13:32:29.662Z",
+      "__v": 10
+    },
+    {
+      "_id": "6a79e659beb820b9452da1bd",
+      "sku": "904294",
+      "name": "Handwork Short Kurta Palazzo Set",
+      "cat": "readymade-dresses",
+      "price": 3000,
+      "originalPrice": 0,
+      "desc": "Color: Dusty Pink / Mauve Pink\r\nFabric: Organza\r\nSet Include: Embroidered Kurta + Wide-Leg Palazzo + Dupatta\r\nWork: Floral Embroidery with Lace Detailing\r\nDescription: A beautiful dusty pink three-piece ethnic set featuring a detailed embroidered kurta with intricate floral work on the neckline, sleeves and hem. The set is paired with a flowing wide-leg palazzo and a matching dupatta finished with delicate lace detailing. The soft pastel shade and traditional embroidery make it suitable for festive occasions, family gatherings and elegant everyday wear.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786373768/memon-cloth-store/tvnkczoxfsyaki2bj3gj.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786373768/memon-cloth-store/tvnkczoxfsyaki2bj3gj.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786373769/memon-cloth-store/tvk4nhckow6al8gwxizf.jpg"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-10T14:55:21.412Z",
+      "__v": 2
+    },
+    {
+      "_id": "6a79e77abeb820b9452da326",
+      "sku": "904294",
+      "name": "Handwork Short Kurta Plazo set",
+      "cat": "readymade-dresses",
+      "price": 3000,
+      "originalPrice": 0,
+      "desc": "Color: Off-White / Ivory\r\nFabric: Organza\r\nSet Include: Embroidered Kurta + Broad Bottom Palazzo + Dupatta\r\nWork: Tone-on-Tone Floral Embroidery with Lace Detailing\r\nDescription: A graceful off-white three-piece set featuring an intricately embroidered kurta with detailed floral work on the neckline, front, sleeves and hem. It comes with a broad-bottom palazzo and a matching dupatta finished with delicate lace and tassel detailing. The soft ivory shade and detailed embroidery make this set suitable for festive occasions, gatherings and special events.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374069/memon-cloth-store/jcysndgscup2znbpdhaj.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374069/memon-cloth-store/jcysndgscup2znbpdhaj.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374070/memon-cloth-store/ec9blncmzf6ehzymihlh.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374070/memon-cloth-store/q5i3cpohuqqjij2fjclp.jpg"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-10T15:00:10.091Z",
+      "__v": 1
+    },
+    {
+      "_id": "6a79e8b3beb820b9452da492",
+      "sku": "905574",
+      "name": "Handwork Cord Set",
+      "cat": "readymade-dresses",
+      "price": 2000,
+      "originalPrice": 0,
+      "desc": "Handwork Cord Set with Farsi Shalwar\r\nColor: Brown / Coffee\r\nFabric: Organza\r\nSet Include: Handwork Kurta + Farsi Shalwar\r\nSize: M, L, XL, XXL\r\nWork: Intricate Handwork Floral Embroidery with Lace Detailing\r\nDescription: A stylish brown cord set crafted in organza fabric, featuring intricate handwork embroidery on the neckline, front, sleeves and hem. The kurta is paired with a traditional Farsi Shalwar, giving the outfit a graceful and distinctive Pakistani-inspired look. Perfect for festive occasions, parties, family gatherings and special events.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374321/memon-cloth-store/tuqgmhu5fepblwda1je9.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374321/memon-cloth-store/tuqgmhu5fepblwda1je9.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374322/memon-cloth-store/kpcuatt5biba348iz9ph.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786374323/memon-cloth-store/blbd7tupbuqlbdtkmokx.jpg"
+      ],
+      "badge": "Premium",
+      "stock": 4,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 1
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-10T15:05:23.847Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a79f04cbeb820b9452da681",
+      "sku": "905106",
+      "name": "Embroidered 3-Piece Pakistani Suit",
+      "cat": "readymade-dresses",
+      "price": 2250,
+      "originalPrice": 2400,
+      "desc": "Embroidered 3-Piece Pakistani Suit\r\nColor: Red, Mustard, Brown\r\nFabric: Cotton \r\nSet Include: Embroidered Kurta + Straight/Farsi-style Trouser + Dupatta\r\nWork: White floral and paisley embroidery with lace detailing\r\nDescription: A beautiful red Pakistani-style 3-piece suit featuring intricate white floral and paisley embroidery on the front and sleeves. The kurta is paired with a matching trouser and a coordinating dupatta, making it suitable for festive occasions, parties and casual gatherings.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376268/memon-cloth-store/uncdeqkrewd7eda4cso8.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376268/memon-cloth-store/uncdeqkrewd7eda4cso8.jpg"
+      ],
+      "badge": "",
+      "stock": 3,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 3
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Brown",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376298/memon-cloth-store/qewswouzbxlxsxtgo5mr.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376300/memon-cloth-store/ckex8nuitquevpywisig.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376301/memon-cloth-store/ldscuwtku89zspbdrbok.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 1
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Mustard",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376331/memon-cloth-store/vmifqkswznwccpm2us0y.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376333/memon-cloth-store/hvzylsp5wbznpnqg5wvh.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 1
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Cherry Red",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376357/memon-cloth-store/vadszavwmvtpspeks2po.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786376358/memon-cloth-store/iytxhjqbysdgzid0tz7f.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 1
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-10T15:37:48.611Z",
+      "__v": 4
+    },
+    {
+      "_id": "6a79f9e1beb820b9452da9b3",
+      "sku": "904727",
+      "name": "Black Shining Organza with Handwork 3-Piece Pakistani Suit",
+      "cat": "readymade-dresses",
+      "price": 1600,
+      "originalPrice": 1800,
+      "desc": "Black Organza Embroidered 3-Piece Pakistani Suit\r\nColor: Black\r\nFabric: Organza\r\nSet Include: Embroidered Kurta + Farsi Shalwar + Dupatta\r\nWork: Heavy floral handwork with intricate embroidery and border detailing\r\nDescription: A stylish black Pakistani 3-piece suit featuring detailed floral embroidery on the neckline, sleeves and kurta hem. The set includes a matching Farsi shalwar and a black dupatta, finished with beautiful embroidered borders for a traditional and festive look.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786378719/memon-cloth-store/piswemg516ph9nvttify.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786378719/memon-cloth-store/piswemg516ph9nvttify.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786378720/memon-cloth-store/fzoo6lnl0xsjaebfsdpo.jpg"
+      ],
+      "badge": "",
+      "stock": 5,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 1
+        },
+        {
+          "size": "3XL",
+          "stock": 1
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-10T16:18:41.223Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7a086655ff0d923e2faf0e",
+      "sku": "904309",
+      "name": "Pakistani Cutwork 3-Piece Suit",
+      "cat": "readymade-dresses",
+      "price": 3500,
+      "originalPrice": 0,
+      "desc": "A beautiful pastel mint-green 3-piece set featuring detailed embroidery on the kurta, matching embroidered trousers, and a coordinating dupatta with delicate border work.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786382435/memon-cloth-store/zsvdvjwhubisbpz5vg7z.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786382435/memon-cloth-store/zsvdvjwhubisbpz5vg7z.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786382436/memon-cloth-store/tpfi4alehc5p4nbmeoen.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786382437/memon-cloth-store/pwueas1y4kvpvyuam7uv.jpg"
+      ],
+      "badge": "",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-10T17:20:38.071Z",
+      "__v": 0,
+      "color": "Pastel Mint Green",
+      "fabric": "Organza",
+      "setInclude": "Embroidered Kurta, Matching Pant, Dupatta",
+      "size": "",
+      "work": "Pakistani-style embroidery with intricate floral and paisley detailing, lace borders and embroidered cuffs."
+    },
+    {
+      "_id": "6a7b00c4e996cf8ad8c48a34",
+      "sku": "",
+      "name": "White Salwar Suit with Red Heart Embroidery and Dupatta",
+      "cat": "dress-material",
+      "price": 850,
+      "originalPrice": 0,
+      "desc": "Add a charming and elegant touch to your ethnic wardrobe with this white dress material featuring beautiful red heart embroidery. The evenly spaced heart motifs create a simple yet eye-catching look, while the delicate red scalloped border adds a stylish finishing touch. The lightweight fabric offers comfortable wear and is suitable for both everyday and festive occasions.\r\nThe classic white and red combination gives the outfit a fresh, graceful appearance and makes it easy to style for different occasions. Perfect for getting it stitched according to your preferred fit and style.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786446019/memon-cloth-store/laace2la7hsczqkeoxtm.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786446019/memon-cloth-store/laace2la7hsczqkeoxtm.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786446019/memon-cloth-store/wth6k5hhq9hxnv5prb1s.jpg"
+      ],
+      "badge": "",
+      "stock": 0,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T11:00:20.285Z",
+      "__v": 4,
+      "color": "White & Red",
+      "fabric": "Soft Cotton (Rayon)",
+      "setInclude": "Dress Material, Bottom & Dupatta",
+      "size": "Customizable / Unstitched",
+      "work": "Red Heart Embroidery with Decorative Scalloped Border"
+    },
+    {
+      "_id": "6a7b01a5e996cf8ad8c48b67",
+      "sku": "",
+      "name": "Pakistani Semi-Stitched Panelwork Dress",
+      "cat": "dress-material",
+      "price": 2000,
+      "originalPrice": 0,
+      "desc": " An elegant Pakistani touch to your ethnic wardrobe with this beautiful semi-stitched suit in a sophisticated dusty mauve shade. The outfit features a delicate floral print base enhanced with intricate floral embroidery on the front panel, giving it a rich and graceful appearance.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786446243/memon-cloth-store/n2oqtriiqdefhzdopkgk.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786446243/memon-cloth-store/n2oqtriiqdefhzdopkgk.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786446244/memon-cloth-store/em9fgt9g5wb5hf5c9jyd.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786446245/memon-cloth-store/s1y0cdz1kv4f27wipmkr.jpg"
+      ],
+      "badge": "",
+      "stock": 2,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T11:04:05.848Z",
+      "__v": 0,
+      "color": "Dusty Mauve / Mauve Pink",
+      "fabric": "Printed Silk",
+      "setInclude": "Semi-Stitched Kurta, Bottom Fabric & Embroidered Dupatta",
+      "size": "Unstitched",
+      "work": "Pakistani Network with Floral Embroidery & Lace Detailing"
+    },
+    {
+      "_id": "6a7b1a448987055106e2a286",
+      "sku": "905620",
+      "name": "Embellished Hijab / Stole",
+      "cat": "hijabs",
+      "price": 400,
+      "originalPrice": 0,
+      "desc": "Elegant and stylish embellished hijab/stole featuring delicate geometric patterns crafted with fine sequin and stone detailing. The subtle shimmer of the fabric gives it a graceful, premium look, making it perfect for adding a sophisticated touch to both traditional and party outfits. Available in beautiful shades including dusty rose, teal blue and silver grey.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786452540/memon-cloth-store/ys4labynkig7blgg03ri.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786452540/memon-cloth-store/ys4labynkig7blgg03ri.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786452547/memon-cloth-store/hbq2ozdajfjlanj7bacx.jpg"
+      ],
+      "badge": "",
+      "color": "Dusty Rose, Teal Blue & Silver Grey",
+      "fabric": "Shimmer Finish Fabric",
+      "size": "Free Size",
+      "setInclude": "",
+      "work": "Delicate Sequin & Stone Work",
+      "stock": 3,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Rose Pink",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786452720/memon-cloth-store/qym7osu6fqhianykzo99.jpg",
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786452721/memon-cloth-store/uzhfd1auz5org5fgbcgv.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 1
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Teal Blue",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786452745/memon-cloth-store/yb83ugthaulsaejsi5wr.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 1
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Silver Grey",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786452881/memon-cloth-store/dot3tb3by9vp1aesy81v.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 1
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-11T12:49:08.473Z",
+      "__v": 6
+    },
+    {
+      "_id": "6a7b2df0c36f25e6f91b69de",
+      "sku": "905548",
+      "name": "Yellow Floral Embroidered Dress Material",
+      "cat": "dress-material",
+      "price": 2200,
+      "originalPrice": 0,
+      "desc": "Elevate your ethnic wardrobe with this elegant yellow floral embroidered dress material featuring a beautifully detailed front panel. The delicate multicolour floral embroidery is enhanced with shimmering pearl and sequin detailing, creating a graceful and festive look. The intricate white lace borders add an elegant finishing touch to the neckline and hem.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786457583/memon-cloth-store/td200pknetodgqirsyw9.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786457583/memon-cloth-store/td200pknetodgqirsyw9.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786457584/memon-cloth-store/a2cph30q7eri51c5ew12.jpg"
+      ],
+      "badge": "",
+      "color": "Mustard Yellow / Pastel Yellow",
+      "fabric": "Organza",
+      "size": "Unstitched",
+      "setInclude": "Top, Bottom and Dupatta",
+      "work": "Multicolour Floral Embroidery with Pearl & Sequin Work, Lace Detailing",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T14:13:04.842Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b3085c36f25e6f91b6e08",
+      "sku": "905603",
+      "name": "Black Shining Organza with Handwork Suit",
+      "cat": "dress-material",
+      "price": 2500,
+      "originalPrice": 0,
+      "desc": "Elegant black suit material featuring a beautiful multicolor floral print paired with a richly embellished embroidered fabric panel. The embroidery is enhanced with delicate sequins, beads and floral motifs, giving the outfit a graceful and festive look. Perfect for creating a stylish ethnic outfit for parties, festive occasions and special gatherings.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786458242/memon-cloth-store/dqzbyji6coazm8h0bevd.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786458242/memon-cloth-store/dqzbyji6coazm8h0bevd.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786458244/memon-cloth-store/njqx0hkxxqxzstddrjgf.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786458244/memon-cloth-store/xenfea4nsz01zxbvglgk.jpg"
+      ],
+      "badge": "",
+      "color": "Black with Multicolor Floral Print Dupatta",
+      "fabric": "Shining Organza",
+      "size": "Unstitched",
+      "setInclude": "Unstitched Kurta, Bottom Fabric & Floral print Dupatta",
+      "work": "Sequin, Bead & Hand Work",
+      "stock": 2,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T14:24:05.496Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b3146c36f25e6f91b6fe2",
+      "sku": "",
+      "name": "Salwar Suit with Red Heart Embroidery and Dupatta",
+      "cat": "dress-material",
+      "price": 850,
+      "originalPrice": 0,
+      "desc": "Add a charming and elegant touch to your ethnic wardrobe with this white dress material featuring beautiful red heart embroidery. The evenly spaced heart motifs create a simple yet eye-catching look, while the delicate red scalloped border adds a stylish finishing touch. The lightweight fabric offers comfortable wear and is suitable for both everyday and festive occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786458437/memon-cloth-store/vrqm0ua4rnxfqoeykl2l.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786458437/memon-cloth-store/vrqm0ua4rnxfqoeykl2l.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786458438/memon-cloth-store/xwujxdupgapylbfrb34n.jpg"
+      ],
+      "badge": "",
+      "color": "Navy blue",
+      "fabric": "Soft Rayon",
+      "size": "Unstitched",
+      "setInclude": "Semi-Stitched Kurta, Bottom Fabric & Embroidered Dupatta",
+      "work": "Embroidery heart work",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T14:27:18.649Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b3388c36f25e6f91b728b",
+      "sku": "905602",
+      "name": "Ivory Floral Embroidered Dress Material",
+      "cat": "dress-material",
+      "price": 2000,
+      "originalPrice": 0,
+      "desc": "Elegant ivory dress material featuring delicate floral bead embroidery on the front panel, complemented by a beautiful multicolor floral printed dupatta. The neckline and front are enhanced with intricate lace and bead detailing, while the hemline features scalloped lace finishing. A graceful choice for festive occasions, family gatherings, and elegant everyday wear.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786459013/memon-cloth-store/okrafkcj3tqlkt8tje6c.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786459013/memon-cloth-store/okrafkcj3tqlkt8tje6c.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786459015/memon-cloth-store/ynhhcpke1wgljkcwfohe.png"
+      ],
+      "badge": "",
+      "color": "Ivory / Off-White",
+      "fabric": "Soft Synthetic / Silk-Blend Fabric",
+      "size": "Unstitched – Customizable",
+      "setInclude": "Semi-Stitched Kurta, Bottom Fabric & Embroidered Dupatta",
+      "work": "Pearl & Bead Embroidery with Lace Detailing",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T14:36:56.330Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b3ed5c36f25e6f91b775b",
+      "sku": "",
+      "name": "Floral Embroidered Cord Set",
+      "cat": "cord-set",
+      "price": 1500,
+      "originalPrice": 0,
+      "desc": "Elegant white cord set featuring a stylish collared top with floral detailing on the sleeves and delicate pink piping. The matching straight-fit pants are enhanced with a beautiful floral design for a coordinated look. A comfortable and fashionable outfit suitable for casual outings, gatherings, and festive occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786461907/memon-cloth-store/ujzpzguhcb0ynplvdnll.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786461907/memon-cloth-store/ujzpzguhcb0ynplvdnll.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786461909/memon-cloth-store/jhnm4jz2yh45bre5cygi.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786461909/memon-cloth-store/ze6ydn7bqaqit4afu6gk.png"
+      ],
+      "badge": "",
+      "color": "White, Beige, and Wine",
+      "fabric": "Jaam Cotton",
+      "size": "L to 3XL",
+      "setInclude": "Top and Plazo",
+      "work": "Embroidery  work",
+      "stock": 9,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 2
+        },
+        {
+          "size": "XL",
+          "stock": 2
+        },
+        {
+          "size": "XXL",
+          "stock": 3
+        },
+        {
+          "size": "3XL",
+          "stock": 2
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "White",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786461943/memon-cloth-store/xwwc2ypzx36isti1oejd.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 1
+            },
+            {
+              "size": "XL",
+              "stock": 1
+            },
+            {
+              "size": "XXL",
+              "stock": 1
+            },
+            {
+              "size": "3XL",
+              "stock": 1
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Wine",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786461986/memon-cloth-store/s7nam4lgobm7pe1hfvpe.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 1
+            },
+            {
+              "size": "XL",
+              "stock": 1
+            },
+            {
+              "size": "XXL",
+              "stock": 1
+            },
+            {
+              "size": "3XL",
+              "stock": 1
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Beige",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786462015/memon-cloth-store/sn7umapckq5lzp21w2tt.png"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 1
+            },
+            {
+              "size": "3XL",
+              "stock": 1
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-11T15:25:09.736Z",
+      "__v": 4
+    },
+    {
+      "_id": "6a7b420ac36f25e6f91b7b82",
+      "sku": "",
+      "name": "Wine & Cream Bow Detail Cord Set",
+      "cat": "cord-set",
+      "price": 1000,
+      "originalPrice": 0,
+      "desc": "Stylish two-tone cord set featuring a maroon and cream contrast top with a smart collared design and statement bow appliqué detailing on the front. The matching cream trousers feature maroon contrast panels for a modern, coordinated look. Comfortable and trendy, perfect for casual outings, gatherings, and everyday fashion.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786462729/memon-cloth-store/atbyznvzl6hq7crjbme3.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786462729/memon-cloth-store/atbyznvzl6hq7crjbme3.jpg"
+      ],
+      "badge": "",
+      "color": "Wine & Cream",
+      "fabric": "Cotton Blend",
+      "size": "L and 2XL",
+      "setInclude": "Top and Bottom",
+      "work": "Patch Work",
+      "stock": 2,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 1
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T15:38:50.326Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b4303c36f25e6f91b7c97",
+      "sku": "",
+      "name": "Pastel Green Floral Farsi Shalwar Cord Set",
+      "cat": "cord-set",
+      "price": 900,
+      "originalPrice": 0,
+      "desc": "Elegant pastel green cord set featuring a stylish collared kurti adorned with delicate white floral appliqué work. The sleeves and hem are enhanced with intricate lace and tassel detailing. Paired with a comfortable white Farsi shalwar, giving the outfit a graceful and contemporary look. Perfect for casual outings, festive gatherings, and daytime occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786473002/memon-cloth-store/k8xynrdy52xgqwroct8s.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786473002/memon-cloth-store/k8xynrdy52xgqwroct8s.png"
+      ],
+      "badge": "",
+      "color": "Pastel Green & White",
+      "fabric": "Cotton Blend",
+      "size": "",
+      "setInclude": "Top and Farsi Shalwar",
+      "work": "Floral Appliqué & Lace Work",
+      "stock": 4,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 1
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T15:42:59.928Z",
+      "__v": 1
+    },
+    {
+      "_id": "6a7b6850e65565e6f8935895",
+      "sku": "",
+      "name": "Pink & Cream Garara Style Palazzo Set",
+      "cat": "cord-set",
+      "price": 900,
+      "originalPrice": 0,
+      "desc": "Elegant pink and cream co-ord set featuring a stylish color-blocked kurta with a beautiful red rose embroidery on the front. The garara-style palazzo comes with wide, flowy panels in contrasting pink and cream, giving the outfit a graceful and trendy silhouette. Perfect for casual outings, festive gatherings, and comfortable everyday wear.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786472526/memon-cloth-store/jdi9qyeua9aitvxhitt2.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786472526/memon-cloth-store/jdi9qyeua9aitvxhitt2.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786472527/memon-cloth-store/k4ozjbghq3e7c50mwaac.png"
+      ],
+      "badge": "",
+      "color": "Pink & Cream",
+      "fabric": "Cotton Blend",
+      "size": "",
+      "setInclude": "Top and Plazo",
+      "work": "Rose Patch",
+      "stock": 3,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 1
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T18:22:08.862Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b6995e65565e6f8935952",
+      "sku": "",
+      "name": "Sky Blue & White Cord Set",
+      "cat": "cord-set",
+      "price": 1000,
+      "originalPrice": 0,
+      "desc": "Elegant sky blue and white Farsi Shalwar set featuring a stylish color-blocked kurta with a collared neckline and beautiful floral embroidery on the front. The matching wide-leg Farsi shalwar features contrasting sky-blue panels for a graceful and flowy look. A comfortable and trendy outfit, perfect for casual outings, festive occasions, and everyday wear.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786472851/memon-cloth-store/cwrbqkt8wuaavzzm5ywh.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786472851/memon-cloth-store/cwrbqkt8wuaavzzm5ywh.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786472852/memon-cloth-store/s0pnykjiijyal1pacqxa.png"
+      ],
+      "badge": "",
+      "color": "Sky Blue & White",
+      "fabric": "Cotton Blend",
+      "size": "",
+      "setInclude": "Top and Plazo",
+      "work": "Patch Work",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 1
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T18:27:33.446Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b6bbbe65565e6f8935aed",
+      "sku": "",
+      "name": "Pakistani Embroidered Style Plazo Set",
+      "cat": "readymade-dresses",
+      "price": 1858,
+      "originalPrice": 0,
+      "desc": "Elegant cream-colored Garara Style Plazo Set featuring a beautifully embroidered kurta with a detailed V-neckline, floral motifs, embroidered sleeves, and scalloped edging. The matching wide-leg plazo features a gathered waist and intricate floral embroidery along the hem. A stylish and comfortable outfit suitable for festive occasions, casual gatherings, and elegant everyday wear.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786473402/memon-cloth-store/nhlss54idl9jm20h0ezc.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786473402/memon-cloth-store/nhlss54idl9jm20h0ezc.png"
+      ],
+      "badge": "",
+      "color": "Cream / Off-White with Teal, Pink & Multicolor Embroidery",
+      "fabric": "Rayon",
+      "size": "3XL",
+      "setInclude": "Short Kurta, Plazo and dupatta",
+      "work": "Multicolor Floral Embroidery with Decorative Border Work",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 1
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-11T18:36:43.559Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7c33babd127b91ca70c865",
+      "sku": "905059",
+      "name": "Rayon Cotton Embroidered Dress Material with Cotton Dupatta",
+      "cat": "dress-material",
+      "price": 1500,
+      "originalPrice": 0,
+      "desc": "Elegant light mint blue rayon cotton dress material featuring beautiful black and white floral thread work. The fabric has a delicate floral pattern with a bold embroidered floral border, adding a stylish and graceful touch. Soft, lightweight, and comfortable, making it suitable for creating elegant ethnic outfits for both casual and festive occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786524596/memon-cloth-store/pnodgf0quypndrdxb4is.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786524596/memon-cloth-store/pnodgf0quypndrdxb4is.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786524599/memon-cloth-store/uvs2ahmfhwlqjil4nkmp.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786524601/memon-cloth-store/i0c9cqgfk8csgysd1t9r.jpg"
+      ],
+      "badge": "",
+      "color": "Light Mint Blue with Black & White",
+      "fabric": "Rayon Cotton",
+      "size": "Unstitched",
+      "setInclude": "Top, Bottom and Dupatta",
+      "work": "Thread Work with Floral Embroidery and Decorative Floral Border",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-12T08:50:02.389Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7c355dbd127b91ca70c8f1",
+      "sku": "905554",
+      "name": "Maslene Floral Printed Dress Material",
+      "cat": "dress-material",
+      "price": 2750,
+      "originalPrice": 3000,
+      "desc": "Elegant black Maslene dress material featuring a beautiful multicolor floral print with vibrant pink, blue, peach, yellow, and green tones. The daaman is enhanced with intricate floral cutwork and decorative border detailing, giving the outfit a rich and stylish finish. A graceful choice for festive occasions, parties, and elegant ethnic wear.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786525125/memon-cloth-store/dsryvty66xbbe60ogxjk.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786525125/memon-cloth-store/dsryvty66xbbe60ogxjk.jpg"
+      ],
+      "badge": "",
+      "color": "Black with Multicolor Floral Print",
+      "fabric": "Maslene",
+      "size": "Unstitched",
+      "setInclude": "Untitched Kurta, Bottom Fabric & Dupatta",
+      "work": "Floral Print with Cutwork Daaman",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-12T08:57:01.232Z",
+      "__v": 1
+    },
+    {
+      "_id": "6a7c36abbd127b91ca70c973",
+      "sku": "905556",
+      "name": "Maslene Dress Material",
+      "cat": "dress-material",
+      "price": 1800,
+      "originalPrice": 2000,
+      "desc": "Elegant Maslene dress material featuring a rich dark floral print in brown, black, and maroon tones. The front panel is beautifully enhanced with intricate floral embroidery, highlighted with delicate golden detailing and a decorative border. Comes with coordinating plain fabric pieces for a sophisticated and versatile ethnic look.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786525352/memon-cloth-store/k2ahdijplz6a6uoxsscb.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786525352/memon-cloth-store/k2ahdijplz6a6uoxsscb.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786525354/memon-cloth-store/rfnqapn04yzbkiobs9vv.jpg"
+      ],
+      "badge": "",
+      "color": "Brown, Black & Maroon Combination",
+      "fabric": "Maslene",
+      "size": "Unstitched",
+      "setInclude": "Printed & Embroidered Dress Material",
+      "work": "Floral Embroidery with Decorative Border Work",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-12T09:02:35.917Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7c3afbbd127b91ca70ca52",
+      "sku": "905379",
+      "name": "Lucknowi Cotton Dress Material",
+      "cat": "dress-material",
+      "price": 1200,
+      "originalPrice": 1500,
+      "desc": "Elegant sage-green dress material featuring beautiful all-over floral embroidery in vibrant pink, red and green shades. The neckline is highlighted with intricate white lace detailing, while the hem features an attractive layered lace and embroidered border. A graceful combination of traditional embroidery and modern floral styling, perfect for festive and casual occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786526457/memon-cloth-store/jwyfpbwitvfi99joxrci.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786526457/memon-cloth-store/jwyfpbwitvfi99joxrci.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786526458/memon-cloth-store/sdy9rlhwaqekefnwl4pa.jpg"
+      ],
+      "badge": "",
+      "color": "Sage Green with Pink & Red Floral Work",
+      "fabric": "Rayon Cotton",
+      "size": "Unstitched",
+      "setInclude": "Semi-Stitched Kurta, Bottom Fabric & Embroidered Dupatta",
+      "work": "Floral Embroidery, Thread Work & Lace/Cutwork Detailing",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-12T09:20:59.491Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7c839ce2fff7ea3f6ab737",
+      "sku": "",
+      "name": "Lucknowi Unstitch Dress Material",
+      "cat": "dress-material",
+      "price": 1200,
+      "originalPrice": 1500,
+      "desc": "Elegant maroon dress material featuring intricate white floral embroidery on the neckline, front panel and hem. The paisley-inspired motifs and delicate floral borders give the outfit a graceful traditional look. Paired with a coordinating white dupatta and matching bottom, making it perfect for festive and casual occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545048/memon-cloth-store/rycv3vqevnwom6vi6jve.jpg",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545048/memon-cloth-store/rycv3vqevnwom6vi6jve.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545049/memon-cloth-store/yke5ymlvtqw4zh41ilwr.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545050/memon-cloth-store/xydjpw38hbeqks9zzdaa.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545050/memon-cloth-store/akfdmi7q8kvyhsp64czi.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545050/memon-cloth-store/o8hkoqovcvuomnclbwav.jpg",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545051/memon-cloth-store/gtso72nsudajmyrdi0yp.jpg"
+      ],
+      "badge": "",
+      "color": "",
+      "fabric": "Rayon",
+      "size": "Unstitched – Customizable",
+      "setInclude": "Top, Bottom and Shifon white Dupatta",
+      "work": "Lucknowi Work",
+      "stock": 5,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [
+        {
+          "name": "Wine",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545077/memon-cloth-store/qx3pmuefeqqwjojpfxz7.jpg"
+          ],
+          "stock": 1,
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Peacock Green",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545131/memon-cloth-store/rna2scpks0yzdsgjczkh.jpg"
+          ],
+          "stock": 1,
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Red",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545145/memon-cloth-store/dzcylh7madvy02srtupe.jpg"
+          ],
+          "stock": 1,
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Navy Blue",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545173/memon-cloth-store/vxbiqvhif9bsdiud8lfm.jpg"
+          ],
+          "stock": 1,
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        },
+        {
+          "name": "Black",
+          "images": [
+            "https://res.cloudinary.com/fnglgxg6/image/upload/v1786545185/memon-cloth-store/jthmlhlezpiixbfoehv5.jpg"
+          ],
+          "stock": 1,
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0
+            },
+            {
+              "size": "M",
+              "stock": 0
+            },
+            {
+              "size": "L",
+              "stock": 0
+            },
+            {
+              "size": "XL",
+              "stock": 0
+            },
+            {
+              "size": "XXL",
+              "stock": 0
+            },
+            {
+              "size": "3XL",
+              "stock": 0
+            },
+            {
+              "size": "4XL",
+              "stock": 0
+            },
+            {
+              "size": "5XL",
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-12T14:30:52.287Z",
+      "__v": 5
+    },
+    {
+      "_id": "6a7d2bb47a96ba781d3fe263",
+      "sku": "905318",
+      "name": "Cotton Dress Material with Cotton Dupatta",
+      "cat": "dress-material",
+      "price": 2100,
+      "originalPrice": 0,
+      "desc": "Beautiful navy-blue cotton dress material featuring elegant white floral embroidery with delicate blue detailing. The dress has an attractive floral border with scalloped finishing, giving it a graceful traditional look. Paired with a matching cotton dupatta, this set is comfortable, breathable and perfect for everyday wear as well as casual occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786588570/memon-cloth-store/tdyqbci4gygxcle0ayxn.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786588570/memon-cloth-store/tdyqbci4gygxcle0ayxn.png"
+      ],
+      "badge": "",
+      "color": "Navy Blue & White",
+      "fabric": "Cotton",
+      "size": "Unstitched",
+      "setInclude": "Cotton Dress Material & Cotton Dupatta",
+      "work": "Floral Embroidery & Scalloped Border Work",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-13T02:28:04.858Z",
+      "__v": 2
+    },
+    {
+      "_id": "6a7d2ccf7a96ba781d3fe2d1",
+      "sku": "",
+      "name": "Cotton  Dress Material",
+      "cat": "dress-material",
+      "price": 2000,
+      "originalPrice": 0,
+      "desc": "Elegant light-blue and white cotton dress material featuring delicate floral prints with intricate embroidery detailing. The beautifully designed border showcases floral and leaf motifs with scalloped finishing, adding a graceful traditional touch. Paired with a matching printed dupatta, this lightweight and comfortable cotton set is perfect for everyday wear and casual occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786588366/memon-cloth-store/ohnus8sdfgxnlfagga9r.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786588366/memon-cloth-store/ohnus8sdfgxnlfagga9r.png"
+      ],
+      "badge": "",
+      "color": "Light Blue & White",
+      "fabric": "Cotton",
+      "size": "Unstitched",
+      "setInclude": "Cotton Dress Material & Matching Dupatta",
+      "work": "Floral Print,Decorative Border Work",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-13T02:32:47.016Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a7d2e987a96ba781d3fe36f",
+      "sku": "",
+      "name": "Brown Embroidered Cotton Dress Material",
+      "cat": "dress-material",
+      "price": 1500,
+      "originalPrice": 0,
+      "desc": "This elegant brown cotton dress material features a beautiful floral printed design with intricate cream embroidery and a richly detailed floral border. The soft cotton fabric offers comfortable wear, while the decorative embroidery adds a graceful and traditional touch. Perfect for creating a stylish ethnic outfit for everyday wear or special occasions.",
+      "img": "https://res.cloudinary.com/fnglgxg6/image/upload/v1786588818/memon-cloth-store/qo05zuakbimd9y5dqjpo.png",
+      "images": [
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786588818/memon-cloth-store/qo05zuakbimd9y5dqjpo.png",
+        "https://res.cloudinary.com/fnglgxg6/image/upload/v1786588823/memon-cloth-store/sudv7ic1idryazh0mjpq.png"
+      ],
+      "badge": "",
+      "color": "Brown",
+      "fabric": "Cotton",
+      "size": "Unstitched",
+      "setInclude": "Cotton Dress Material & Cotton Dupatta",
+      "work": "Floral Embroidery with Cutwork Detailing and Decorative Border",
+      "stock": 1,
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 0
+        },
+        {
+          "size": "M",
+          "stock": 0
+        },
+        {
+          "size": "L",
+          "stock": 0
+        },
+        {
+          "size": "XL",
+          "stock": 0
+        },
+        {
+          "size": "XXL",
+          "stock": 0
+        },
+        {
+          "size": "3XL",
+          "stock": 0
+        },
+        {
+          "size": "4XL",
+          "stock": 0
+        },
+        {
+          "size": "5XL",
+          "stock": 0
+        }
+      ],
+      "avgRating": 0,
+      "numReviews": 0,
+      "colors": [],
+      "createdAt": "2026-08-13T02:40:24.635Z",
+      "__v": 0
+    }
+  ],
+  "categories": [
+    {
+      "_id": "6a69a8e4c68dcaa687551e8b",
+      "id": "hijabs",
+      "name": "Hijabs",
+      "__v": 0
+    },
+    {
+      "_id": "6a69a8ffc68dcaa687551ea7",
+      "id": "dress-material",
+      "name": "Dress Material",
+      "__v": 0
+    },
+    {
+      "_id": "6a69a912c68dcaa687551ebc",
+      "id": "readymade-dresses",
+      "name": "Pakistani Readymade",
+      "__v": 0
+    },
+    {
+      "_id": "6a746284d80d2f6e7972416a",
+      "id": "kashmiri-suit",
+      "name": "Kashmiri Readymade Suit",
+      "__v": 0
+    },
+    {
+      "_id": "6a746411d80d2f6e79724235",
+      "id": "lucknowi-suit",
+      "name": "Lucknowi Readymade Suit",
+      "__v": 0
+    },
+    {
+      "_id": "6a7b3bc2c36f25e6f91b7550",
+      "id": "cord-set",
+      "name": "Cord Set",
+      "__v": 0
+    }
+  ],
+  "settings": [
+    {
+      "_id": "6a757807f045bda74185dc99",
+      "key": "storeName",
+      "__v": 0,
+      "value": "MEMON CLOTH STORE"
+    },
+    {
+      "_id": "6a757807f045bda74185dc9a",
+      "key": "tagline",
+      "__v": 0,
+      "value": "Quality Fabrics at Affordable Prices"
+    },
+    {
+      "_id": "6a757807f045bda74185dc9b",
+      "key": "address",
+      "__v": 0,
+      "value": "Shop 1 & 2, Near National Urdu Primary School - Valipeer Rd, Bhoiwada, Kalyan, Maharashtra 421301"
+    },
+    {
+      "_id": "6a757807f045bda74185dc9c",
+      "key": "phone",
+      "__v": 0,
+      "value": "8452803023"
+    },
+    {
+      "_id": "6a757807f045bda74185dc9d",
+      "key": "whatsapp",
+      "__v": 0,
+      "value": "8452803023"
+    }
+  ]
+}

@@ -1,190 +1,234 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const connectDB = require('./config/db');
-const seedData = require('./config/seed');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
+const rateLimit = require("express-rate-limit");
+const connectDB = require("./config/db");
+const seedData = require("./config/seed");
 
 const app = express();
 
 // Connect to MongoDB
 connectDB();
 
-// Middleware
-app.use(cors());
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+// Security & logging middleware
+app.use(
+  helmet({ contentSecurityPolicy: false, crossOriginResourcePolicy: false }),
+);
+app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 
-// Serve uploaded images
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Restrict cross-origin API access to known frontends (falls back to open for local dev
+// when FRONTEND_URL/ADMIN_URL aren't set - always set both in production).
+const allowedOrigins = [process.env.FRONTEND_URL, process.env.ADMIN_URL].filter(
+  Boolean,
+);
+app.use(
+  cors({
+    origin: allowedOrigins.length ? allowedOrigins : true,
+    credentials: true,
+  }),
+);
 
-// Serve frontend static files
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
+
+// Rate limiting: loose global cap, stricter cap on auth/payment endpoints (brute-force/abuse targets)
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 300,
+    standardHeaders: true,
+    legacyHeaders: false,
+  }),
+);
+const strictLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 // API Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/products', require('./routes/products'));
-app.use('/api/orders', require('./routes/orders'));
-app.use('/api/categories', require('./routes/categories'));
-app.use('/api/users', require('./routes/users'));
-app.use('/api/reviews', require('./routes/reviews'));
-app.use('/api/wishlist', require('./routes/wishlist'));
-app.use('/api/payment', require('./routes/payment'));
+app.use("/api/auth", strictLimiter, require("./routes/auth"));
+app.use("/api/products", require("./routes/products"));
+app.use("/api/orders", require("./routes/orders"));
+app.use("/api/categories", require("./routes/categories"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/reviews", require("./routes/reviews"));
+app.use("/api/payment", strictLimiter, require("./routes/payment"));
+app.use("/api/promos", require("./routes/promos"));
 
 // Settings endpoint (admin)
-app.get('/api/settings', async (req, res) => {
+app.get("/api/settings", async (req, res) => {
   try {
-    const Setting = require('./models/Setting');
+    const Setting = require("./models/Setting");
     const settings = await Setting.find();
     const settingsObj = {};
-    settings.forEach(s => { settingsObj[s.key] = s.value; });
+    settings.forEach((s) => {
+      settingsObj[s.key] = s.value;
+    });
     res.json(settingsObj);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-app.put('/api/settings', require('./middleware/auth').adminAuth, async (req, res) => {
-  try {
-    const Setting = require('./models/Setting');
-    const entries = Object.entries(req.body);
-    for (const [key, value] of entries) {
-      await Setting.findOneAndUpdate({ key }, { value }, { upsert: true });
+app.put(
+  "/api/settings",
+  require("./middleware/auth").adminAuth,
+  async (req, res) => {
+    try {
+      const Setting = require("./models/Setting");
+      const entries = Object.entries(req.body);
+      for (const [key, value] of entries) {
+        await Setting.findOneAndUpdate({ key }, { value }, { upsert: true });
+      }
+      res.json({ message: "Settings updated" });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
-    res.json({ message: 'Settings updated' });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+  },
+);
 
 // Dashboard stats (admin)
-app.get('/api/admin/stats', require('./middleware/auth').adminAuth, async (req, res) => {
-  try {
-    const Product = require('./models/Product');
-    const Order = require('./models/Order');
-    const User = require('./models/User');
+app.get(
+  "/api/admin/stats",
+  require("./middleware/auth").adminAuth,
+  async (req, res) => {
+    try {
+      const Product = require("./models/Product");
+      const Order = require("./models/Order");
+      const User = require("./models/User");
 
-    const totalProducts = await Product.countDocuments();
-    const totalOrders = await Order.countDocuments();
-    const orders = await Order.find();
-    const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
-    const pendingOrders = await Order.countDocuments({ status: 'pending' });
-    const totalCustomers = await User.countDocuments({ role: 'customer' });
+      const [totalProducts, totalOrders, pendingOrders, totalCustomers, rev] =
+        await Promise.all([
+          Product.countDocuments(),
+          Order.countDocuments(),
+          Order.countDocuments({ status: "pending" }),
+          User.countDocuments({ role: "customer" }),
+          Order.aggregate([
+            { $match: { status: { $ne: "cancelled" } } },
+            { $group: { _id: null, total: { $sum: "$total" } } },
+          ]),
+        ]);
 
-    res.json({
-      totalProducts,
-      totalOrders,
-      totalRevenue,
-      pendingOrders,
-      totalCustomers
-    });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// Admin login
-app.post('/api/admin/login', (req, res) => {
-  const { password } = req.body;
-  if (password === process.env.ADMIN_PASSWORD) {
-    res.json({ success: true, token: 'admin-' + process.env.ADMIN_PASSWORD });
-  } else {
-    res.status(401).json({ error: 'Incorrect password' });
-  }
-});
+      res.json({
+        totalProducts,
+        totalOrders,
+        totalRevenue: rev[0]?.total || 0,
+        pendingOrders,
+        totalCustomers,
+      });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
+);
 
 // Export/Import endpoints
-app.get('/api/admin/export', require('./middleware/auth').adminAuth, async (req, res) => {
-  try {
-    const Product = require('./models/Product');
-    const Order = require('./models/Order');
-    const Category = require('./models/Category');
-    const Setting = require('./models/Setting');
-    const User = require('./models/User');
+app.get(
+  "/api/admin/export",
+  require("./middleware/auth").adminAuth,
+  async (req, res) => {
+    try {
+      const Product = require("./models/Product");
+      const Order = require("./models/Order");
+      const Category = require("./models/Category");
+      const Setting = require("./models/Setting");
+      const User = require("./models/User");
 
-    const [products, orders, categories, settings, users] = await Promise.all([
-      Product.find(),
-      Order.find(),
-      Category.find(),
-      Setting.find(),
-      User.find().select('-password')
-    ]);
+      const [products, orders, categories, settings, users] = await Promise.all(
+        [
+          Product.find(),
+          Order.find(),
+          Category.find(),
+          Setting.find(),
+          User.find().select("-password"),
+        ],
+      );
 
-    const settingsObj = {};
-    settings.forEach(s => { settingsObj[s.key] = s.value; });
+      const settingsObj = {};
+      settings.forEach((s) => {
+        settingsObj[s.key] = s.value;
+      });
 
-    res.json({ products, orders, categories, settings: settingsObj, users });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-app.post('/api/admin/import', require('./middleware/auth').adminAuth, async (req, res) => {
-  try {
-    const Product = require('./models/Product');
-    const Order = require('./models/Order');
-    const Category = require('./models/Category');
-    const Setting = require('./models/Setting');
-
-    const { products, orders, categories, settings } = req.body;
-
-    // Clear existing data
-    await Promise.all([
-      Product.deleteMany({}),
-      Order.deleteMany({}),
-      Category.deleteMany({}),
-      Setting.deleteMany({})
-    ]);
-
-    // Import new data
-    if (products?.length) await Product.insertMany(products);
-    if (orders?.length) await Order.insertMany(orders);
-    if (categories?.length) await Category.insertMany(categories);
-    if (settings) {
-      for (const [key, value] of Object.entries(settings)) {
-        await Setting.create({ key, value });
-      }
+      res.json({ products, orders, categories, settings: settingsObj, users });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
+  },
+);
 
-    res.json({ message: 'Data imported successfully' });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+app.post(
+  "/api/admin/import",
+  require("./middleware/auth").adminAuth,
+  async (req, res) => {
+    try {
+      const Product = require("./models/Product");
+      const Order = require("./models/Order");
+      const Category = require("./models/Category");
+      const Setting = require("./models/Setting");
 
-app.post('/api/admin/reset', require('./middleware/auth').adminAuth, async (req, res) => {
-  try {
-    const Product = require('./models/Product');
-    const Order = require('./models/Order');
-    const Category = require('./models/Category');
+      const { products, orders, categories, settings } = req.body;
 
-    await Promise.all([
-      Product.deleteMany({}),
-      Order.deleteMany({}),
-      Category.deleteMany({})
-    ]);
+      // Clear existing data
+      await Promise.all([
+        Product.deleteMany({}),
+        Order.deleteMany({}),
+        Category.deleteMany({}),
+        Setting.deleteMany({}),
+      ]);
 
-    // Re-seed default data
-    await seedData();
+      // Import new data
+      if (products?.length) await Product.insertMany(products);
+      if (orders?.length) await Order.insertMany(orders);
+      if (categories?.length) await Category.insertMany(categories);
+      if (settings) {
+        for (const [key, value] of Object.entries(settings)) {
+          await Setting.create({ key, value });
+        }
+      }
 
-    res.json({ message: 'Data reset to defaults' });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+      res.json({ message: "Data imported successfully" });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
+);
 
-// Fallback to frontend for SPA routing
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
-});
+app.post(
+  "/api/admin/reset",
+  require("./middleware/auth").adminAuth,
+  async (req, res) => {
+    try {
+      const Product = require("./models/Product");
+      const Order = require("./models/Order");
+      const Category = require("./models/Category");
+
+      await Promise.all([
+        Product.deleteMany({}),
+        Order.deleteMany({}),
+        Category.deleteMany({}),
+      ]);
+
+      // Re-seed default data
+      await seedData();
+
+      res.json({ message: "Data reset to defaults" });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
+);
 
 // Error handling for multer
 app.use((err, req, res, next) => {
-  if (err.message === 'Only image files (JPG, PNG, WebP) are allowed') {
+  if (err.message === "Only image files (JPG, PNG, WebP) are allowed") {
     return res.status(400).json({ error: err.message });
   }
-  if (err.message.includes('File too large')) {
-    return res.status(400).json({ error: 'File size must be less than 5MB' });
+  if (err.message.includes("File too large")) {
+    return res.status(400).json({ error: "File size must be less than 5MB" });
   }
   next(err);
 });
