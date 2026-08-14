@@ -7,6 +7,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
+import { ErrorBoundary } from "./components/ErrorBoundary.tsx";
 import { ThemeToggle } from "./components/ThemeToggle.tsx";
 import { ToastHost } from "./components/ToastHost.tsx";
 import { useAuth } from "./lib/auth.tsx";
@@ -15,6 +16,7 @@ import { Categories } from "./pages/Categories.tsx";
 import { Customers } from "./pages/Customers.tsx";
 import { Dashboard } from "./pages/Dashboard.tsx";
 import { Login } from "./pages/Login.tsx";
+import { NotFound } from "./pages/NotFound.tsx";
 import { Orders } from "./pages/Orders.tsx";
 import { Products } from "./pages/Products.tsx";
 import { Reviews } from "./pages/Reviews.tsx";
@@ -98,7 +100,9 @@ function Shell() {
         </div>
       </div>
       <div className="container">
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </div>
       <ToastHost />
     </div>
@@ -120,7 +124,7 @@ export default function App() {
         <Route path="categories" element={<Categories />} />
         <Route path="settings" element={<SettingsPage />} />
       </Route>
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
