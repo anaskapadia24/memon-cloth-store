@@ -9,6 +9,12 @@ const seedData = require("./config/seed");
 
 const app = express();
 
+// Behind a reverse proxy (CloudPanel/Nginx) in production - trust the first hop's
+// X-Forwarded-For so express-rate-limit identifies real client IPs correctly.
+if (process.env.NODE_ENV === "production") {
+  app.set("trust proxy", 1);
+}
+
 // Connect to MongoDB
 connectDB();
 
