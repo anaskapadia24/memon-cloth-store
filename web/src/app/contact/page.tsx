@@ -51,7 +51,7 @@ export default function ContactPage() {
             <div className="contact-card">
               <i className="fas fa-clock" />
               <h4>Store Hours</h4>
-              <p>Mon - Sun: 11:00 AM - 9:00 PM</p>
+              <p>Mon - Sun: 11:00 AM - 9:30 PM</p>
             </div>
           </div>
 
