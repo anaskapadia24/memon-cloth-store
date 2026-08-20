@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Newsreader, Sora } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
@@ -96,7 +97,19 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body>
+            <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6CZ1XC8KQX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6CZ1XC8KQX');
+          `}
+        </Script>
         <AuthProvider user={user}>
           <CartProvider>
             <ScrollReveal />
