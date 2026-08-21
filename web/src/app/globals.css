@@ -3392,8 +3392,8 @@ select:focus-visible {
 }
 .shop-layout.with-rail {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
   align-items: start;
 }
 .shop-sidebar {
@@ -3407,7 +3407,7 @@ select:focus-visible {
   background: var(--surface);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 16px;
 }
 .size-filter-box h4 {
   font-size: 0.78rem;
